@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:background="@drawable/reference_background"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/rvdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="主  车"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!--内层参数填充-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rvdata"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="码盘:"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/coded_disc_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="@string/mp_data"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:gravity="center_horizontal"
+                android:lines="1"
+                android:text="@string/line_disc"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/angle_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="@string/line_data"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:gravity="center_horizontal"
+                android:text="@string/angle_disc"
+                android:lines="1"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/speed_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="@string/sp_data"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.3"
+            android:gravity="center_vertical"
+            android:background="@drawable/reference_background"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:layout_marginTop="5dp">
+
+
+            <!--超声波-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="超声波："
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/ultraSonicTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 mm"
+                    android:textSize="14sp"
+                    android:lines="1"
+                    android:ellipsize="end"/>
+
+            </LinearLayout>
+
+            <!--光照度-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="光照度："
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/lightTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 lx"
+                    android:textSize="14sp"
+                    android:lines="1"
+                    android:ellipsize="end"/>
+
+            </LinearLayout>
+
+            <!--码盘值-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="码盘值："
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/codedDiskTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!--光敏-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="光敏状态："
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/psStatusTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!--运行状态-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="运行状态："
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/stateTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/up_button"
+                    android:layout_width="45dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/upbutton_img" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <ImageButton
+                    android:id="@+id/left_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_above="@+id/below_button"
+                    android:layout_toLeftOf="@+id/up_button"
+                    android:background="@drawable/leftbutton_img" />
+
+                <ImageButton
+                    android:id="@+id/stop_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_below="@id/up_button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/stopbutton_img" />
+
+                <ImageButton
+                    android:id="@+id/right_button"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignBottom="@+id/stop_button"
+                    android:layout_toRightOf="@+id/up_button"
+                    android:background="@drawable/rightbutton_img" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/below_button"
+                    android:layout_width="45dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/stop_button"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/belowbutton_img" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

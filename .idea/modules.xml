@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Car2021_v1.8__YCZY.iml" filepath="$PROJECT_DIR$/.idea/modules/Car2021_v1.8__YCZY.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Car2021_v1.8__YCZY.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Car2021_v1.8__YCZY.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Car2021_v1.8__YCZY.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Car2021_v1.8__YCZY.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Car2021_v1.8__YCZY.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Car2021_v1.8__YCZY.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Car2021_v1.8__YCZY.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Car2021_v1.8__YCZY.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Car2021_v1.8__YCZY.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Car2021_v1.8__YCZY.library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Car2021_v1.8__YCZY.library.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Car2021_v1.8__YCZY.library.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Car2021_v1.8__YCZY.library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Car2021_v1.8__YCZY.library.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Car2021_v1.8__YCZY.library.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Car2021_v1.8__YCZY.library.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/Car2021_v1.8__YCZY.openCVLibrary343.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/Car2021_v1.8__YCZY.openCVLibrary343.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/Car2021_v1.8__YCZY.openCVLibrary343.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/Car2021_v1.8__YCZY.openCVLibrary343.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/Car2021_v1.8__YCZY.openCVLibrary343.main.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/Car2021_v1.8__YCZY.openCVLibrary343.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/Car2021_v1.8__YCZY.openCVLibrary343.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/Car2021_v1.8__YCZY.openCVLibrary343.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tess-two/Car2021_v1.8__YCZY.tess-two.iml" filepath="$PROJECT_DIR$/.idea/modules/tess-two/Car2021_v1.8__YCZY.tess-two.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tess-two/Car2021_v1.8__YCZY.tess-two.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tess-two/Car2021_v1.8__YCZY.tess-two.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tess-two/Car2021_v1.8__YCZY.tess-two.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tess-two/Car2021_v1.8__YCZY.tess-two.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tess-two/Car2021_v1.8__YCZY.tess-two.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tess-two/Car2021_v1.8__YCZY.tess-two.unitTest.iml" />
+    </modules>
+  </component>
+</project>

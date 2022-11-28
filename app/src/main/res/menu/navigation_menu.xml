@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/auto_page_item"
+        android:icon="@drawable/ic_one_ic_port"
+        android:title="自动驾驶" />
+
+    <item
+        android:id="@+id/home_page_item"
+        android:icon="@drawable/ic_one_ic_port"
+        android:title="主页" />
+
+    <item
+        android:id="@+id/scene_setting_item"
+        android:icon="@drawable/ic_zigbee"
+        android:title="ZigBee通信" />
+
+    <item
+        android:id="@+id/device_manage_item"
+        android:icon="@drawable/ic_inferad"
+        android:title="红外通信" />
+
+    <item
+        android:id="@+id/personal_center_item"
+        android:icon="@drawable/ic_four_ic"
+        android:title="其他" />
+
+</menu>

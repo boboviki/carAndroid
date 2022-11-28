@@ -1,0 +1,199 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ActivityView.FirstActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/title"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/image_show"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/rgb"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/rec_image_show"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:scaleType="fitCenter" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/trfficBtn"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:text="交通灯"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/car_color"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:text="颜色"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/car_shape"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:text="形状"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="识别结果："
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/show_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="···"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/brightness"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/brightness_data"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:digits="0123456789-+"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:textSize="12sp"
+            android:text="80" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/progress"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/progress_data"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:digits="0123456789-+"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:text="18"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/blur"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/blur_data"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:digits="0123456789"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:text="5"
+            android:textSize="12sp"/>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/recdata"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:padding="5dp"
+        android:text="识别结果"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/savePicBtn"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="保存图片"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/dy1Btn"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="预设位1"
+            android:textSize="8sp" />
+        <Button
+            android:id="@+id/dy2Btn"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="预设位2"
+            android:textSize="8sp" />
+        <Button
+            android:id="@+id/dy3Btn"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="预设位3"
+            android:textSize="8sp" />
+        <Button
+            android:id="@+id/dy4Btn"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="待用4"
+            android:textSize="8sp" />
+        <Button
+            android:id="@+id/dy5Btn"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="待用5"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+
+</LinearLayout>
