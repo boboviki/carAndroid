@@ -15,14 +15,12 @@
 15     limitations under the License.
 16-->
 17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-18    package="com.googlecode.tesseract.android"
-19    android:versionCode="1"
-20    android:versionName="1.0" >
-21
-22    <uses-sdk
-23        android:minSdkVersion="16"
-23-->D:\BaiduSyncdisk\Android\Car2021_v1.8_ YCZY\tess-two\AndroidManifest.xml
-24        android:targetSdkVersion="30" />
-24-->D:\BaiduSyncdisk\Android\Car2021_v1.8_ YCZY\tess-two\AndroidManifest.xml
-25
-26</manifest>
+18    package="com.googlecode.tesseract.android" >
+19
+20    <uses-sdk
+21        android:minSdkVersion="16"
+21-->D:\00ProjectGit\carAndroid\tess-two\AndroidManifest.xml
+22        android:targetSdkVersion="30" />
+22-->D:\00ProjectGit\carAndroid\tess-two\AndroidManifest.xml
+23
+24</manifest>
