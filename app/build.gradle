@@ -6,7 +6,8 @@ android {
 
     defaultConfig {
         applicationId "car.bkrckj_logo.com.car2021"
-        minSdkVersion 18
+        archivesBaseName = "$applicationId"
+        minSdk 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.2"
@@ -14,14 +15,10 @@ android {
         ndk {
             moduleName "serial_port"
             ldLibs "log", "z", "m"
-            abiFilters "armeabi", "armeabi-v7a","arm64-v8a","x86","x86_64"
+            abiFilters  "armeabi-v7a","arm64-v8a","x86","x86_64"
         }
-//        externalNativeBuild{
-//            ndk{
-//                abiFilter("armeabi-v7a")
-//            }
-//        }
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -57,6 +54,7 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'com.rmtheis:tess-two:+'
+    implementation project(path: ':yolov5')
     testImplementation 'junit:junit:4.12'
     implementation project(':library')
     implementation(name:'usbSerialForAndroid-debug', ext:'aar')

@@ -18,7 +18,7 @@
 18    package="com.googlecode.tesseract.android" >
 19
 20    <uses-sdk
-21        android:minSdkVersion="16"
+21        android:minSdkVersion="24"
 21-->D:\00ProjectGit\carAndroid\tess-two\AndroidManifest.xml
 22        android:targetSdkVersion="30" />
 22-->D:\00ProjectGit\carAndroid\tess-two\AndroidManifest.xml

@@ -23,6 +23,7 @@ import car.bkrc.com.car2021.FragmentView.LeftFragment;
 
 import static android.graphics.Bitmap.Config.ARGB_8888;
 import static car.bkrc.com.car2021.ActivityView.FirstActivity.RightAutoFragment;
+
 import static org.opencv.core.Core.BORDER_REPLICATE;
 import static org.opencv.core.CvType.CV_8UC1;
 import static org.opencv.imgproc.Imgproc.COLOR_BGR2GRAY;

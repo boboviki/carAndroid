@@ -19,6 +19,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tess-two/carAndroid.tess-two.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tess-two/carAndroid.tess-two.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tess-two/carAndroid.tess-two.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tess-two/carAndroid.tess-two.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/tess-two/carAndroid.tess-two.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tess-two/carAndroid.tess-two.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.main.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.unitTest.iml" />
     </modules>
   </component>
 </project>

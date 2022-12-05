@@ -3,12 +3,16 @@ package car.bkrc.com.car2021.FragmentView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -89,6 +93,8 @@ public class RightAutoFragment extends Fragment  {
     //    private byte[] img2;
     private Button car_trffic,car_color,car_shape;
     private Button savePicBtn,cameraSet1,cameraSet2,cameraSet3;
+
+    private static final int REQUEST_PICK_IMAGE = 2;
 
     private Bitmap green00,green01,green02,green03,green04,red00,red01,red02,red03,red04,yellow00,yellow01,yellow02,yellow03,yellow04;
     public static Mat matgreen0,matgreen1,matgreen2,matgreen3,matgreen4,matred0,matred1,matred2,matred3,matred4,matyellow0,matyellow1,matyellow2,matyellow3,matyellow4;
@@ -236,18 +242,6 @@ public class RightAutoFragment extends Fragment  {
         car_trffic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if( read_img_int>1) {
-//                    read_img_int = 0;
-//                }
-//
-//                if ( read_img_int==0) {
-//                    cleanflag();
-//                    read_img_int++;}
-//                else if( read_img_int==1) {
-//                    cleanflag();
-//                    RgbOpencvFlag = true;
-//                    read_img_int++;
-//                }
                 ConnectTransport.tftDown();
             }
         });
@@ -256,27 +250,6 @@ public class RightAutoFragment extends Fragment  {
             @Override
             public void onClick(View v) {
 
-//                if( car_color_int>1) {
-//                    car_color_int = 0;
-//                }
-//                if (car_color_int==0) {
-//                    cleanflag();
-//                    car_color_int++;}
-//                else if(car_color_int==1) {
-//                    cleanflag();
-//                    ShapeFlag = true;
-//                    car_color_int++;
-//                }
-
-
-//                CarShape.ret_x=0;
-//                CarShape.ret_y=0;
-//                CarShape.dis_x=0;
-//                CarShape.dis_y=0;
-//                int shapeNum=0;
-//                Message message = new Message();
-//                message.what = 20;
-//                CSHandler.sendMessage(message);
                 CarPlate();
             }
         });
@@ -284,24 +257,6 @@ public class RightAutoFragment extends Fragment  {
         car_shape.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                if( read_img_int>1) {
-//                    read_img_int = 0;
-//                }
-//                if (car_shape_int==0) {
-//                        cleanflag();
-//                    car_shape_int++;}
-//                else if(car_shape_int==1) {
-//                        cleanflag();
-//                        QrFlag = true;
-//                    car_shape_int++;
-//                    }
-//
-//                //保存图片
-//                Bitmap bitmap_save=left_Fragment.bitmap;
-//                //bitmap_save = Bitmap.createBitmap(bitmap_save.getWidth(), bitmap_save.getHeight(), Bitmap.Config.ARGB_8888);
-//                BitmapUtils bitmapUtils=new BitmapUtils();
-//                bitmapUtils.saveBitmap(bitmap_save,"/car/",".png");
                 CarShape carShape=new CarShape();
                 // long current = System.currentTimeMillis();
                 Bitmap bitmapShape = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
@@ -349,11 +304,24 @@ public class RightAutoFragment extends Fragment  {
                                           }
                                       }
         );
+
+
+        image_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //在这里跳转到手机系统相册里面
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, REQUEST_PICK_IMAGE);
+            }
+        });
     }
+
+
+
+
+
     /***以上为按键事件***/
-
-
-
         private void iniLoadOpenCV(){
         boolean success= OpenCVLoader.initDebug();
         if (success){
@@ -362,6 +330,9 @@ public class RightAutoFragment extends Fragment  {
             Log.e("cmd", "加载opencv失败");
         }
     }
+
+
+
 
     public void task(){//放在主线程里运行
         Timer timer = new Timer();

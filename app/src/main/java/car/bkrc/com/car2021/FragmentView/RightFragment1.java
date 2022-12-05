@@ -59,7 +59,7 @@ public class RightFragment1 extends Fragment {
 
     public static final String TAG = "RightFragment1";
     private View view = null;
-    public static RightAutoFragment RightAutoFragment = new RightAutoFragment();;
+    public static RightAutoFragment RightAutoFragment = new RightAutoFragment();
 
     private boolean dateGetState = true; // 主从车接收状态切换
 

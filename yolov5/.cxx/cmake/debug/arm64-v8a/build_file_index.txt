@@ -1,0 +1,1 @@
+D:\00ProjectGit\carAndroid\yolov5\src\main\jni\CMakeLists.txt

@@ -48,6 +48,7 @@ import car.bkrc.com.car2021.Utils.OtherUtil.ToastUtil;
 import car.bkrc.com.car2021.R;
 import car.bkrc.com.car2021.ViewAdapter.ViewPagerAdapter;
 import car.bkrc.com.car2021.Utils.OtherUtil.Transparent;
+import car.bkrc.com.car2021.yolov5ncnn.Yolov5Fragment;
 import car.bkrc.com.car2021.FragmentView.LeftFragment;
 import car.bkrc.com.car2021.FragmentView.RightFragment1;
 import car.bkrc.com.car2021.FragmentView.RightInfraredFragment;
@@ -60,6 +61,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
 
 public class FirstActivity extends AppCompatActivity {
     private ViewPager viewPager;
@@ -91,18 +93,22 @@ public class FirstActivity extends AppCompatActivity {
                 case R.id.auto_page_item:
                     mLateralViewPager.setCurrentItem(0);
                     return true;
-                case R.id.home_page_item:
+                case R.id.yolov5_page_item:
                     mLateralViewPager.setCurrentItem(1);
                     return true;
-                case R.id.scene_setting_item:
+                case R.id.home_page_item:
                     mLateralViewPager.setCurrentItem(2);
                     return true;
-                case R.id.device_manage_item:
+                case R.id.scene_setting_item:
                     mLateralViewPager.setCurrentItem(3);
                     return true;
-                case R.id.personal_center_item:
+                case R.id.device_manage_item:
                     mLateralViewPager.setCurrentItem(4);
                     return true;
+//                case R.id.personal_center_item:
+//                    mLateralViewPager.setCurrentItem(5);
+//                    return true;
+
             }
             return false;
         }
@@ -140,7 +146,7 @@ public class FirstActivity extends AppCompatActivity {
             }
         });
         viewPager = (ViewPager) findViewById(R.id.viewpager);//使用viewPager实现页面滑动效果
-        viewPager.setOffscreenPageLimit(3);
+        viewPager.setOffscreenPageLimit(5);//改之前为3
 
         // 底部导航栏
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigation);
@@ -180,10 +186,11 @@ public class FirstActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(RightAutoFragment.getInstance());
+        adapter.addFragment(Yolov5Fragment.getInstance());
         adapter.addFragment(RightFragment1.getInstance());
         adapter.addFragment(RightZigbeeFragment.getInstance());
         adapter.addFragment(RightInfraredFragment.getInstance());
-        adapter.addFragment(RightOtherFragment.getInstance());
+       // adapter.addFragment(RightOtherFragment.getInstance());
         viewPager.setAdapter(adapter);
     }
 
