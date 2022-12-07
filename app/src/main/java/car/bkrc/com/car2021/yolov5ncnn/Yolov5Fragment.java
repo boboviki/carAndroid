@@ -132,8 +132,6 @@ public class Yolov5Fragment extends Fragment {
 
     }
 
-
-
     private void showObjects(YoloV5Ncnn.Obj[] objects)
     {
         if (objects == null)

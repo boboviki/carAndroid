@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '30.0.0'
+
+    defaultConfig {
+        archivesBaseName = "$applicationId"
+
+        ndk {
+            moduleName "ncnn"
+            abiFilters "armeabi-v7a", "arm64-v8a","arm64-v8a","x86","x86_64"
+        }
+        minSdkVersion 24
+    }
+
+    externalNativeBuild {
+        cmake {
+            version "3.10.2"
+            path file('src/main/jni/CMakeLists.txt')
+        }
+    }
+}
