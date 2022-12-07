@@ -1,0 +1,7 @@
+Executable : D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+D:\00ProjectGit\carAndroid\yolov5\.cxx\cmake\debug\x86_64
+yolov5ncnn
+jvmArgs : 
+

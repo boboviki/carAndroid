@@ -1,3 +1,0 @@
-D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/debug/arm64-v8a/CMakeFiles/yolov5ncnn.dir
-D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/debug/arm64-v8a/CMakeFiles/edit_cache.dir
-D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/debug/arm64-v8a/CMakeFiles/rebuild_cache.dir

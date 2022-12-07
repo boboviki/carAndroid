@@ -1,0 +1,33 @@
+{
+  "buildFiles": [
+    "D:\\00ProjectGit\\carAndroid\\yolov5\\src\\main\\jni\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\adt-bundle-windows\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+      "-C",
+      "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\debug\\x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\adt-bundle-windows\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "-C",
+    "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\debug\\x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "yolov5ncnn-Debug-x86_64": {
+      "artifactName": "yolov5ncnn",
+      "buildCommandComponents": [
+        "D:\\adt-bundle-windows\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "-C",
+        "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\debug\\x86_64",
+        "yolov5ncnn"
+      ],
+      "abi": "x86_64",
+      "output": "D:\\00ProjectGit\\carAndroid\\yolov5\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libyolov5ncnn.so",
+      "runtimeFiles": []
+    }
+  }
+}

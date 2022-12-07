@@ -1,3 +1,0 @@
-D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/yolov5ncnn.dir
-D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
-D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir

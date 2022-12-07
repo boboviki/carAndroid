@@ -1,0 +1,2 @@
+ninja: Entering directory `D:\00ProjectGit\carAndroid\yolov5\.cxx\cmake\debug\x86_64'
+ninja: no work to do.
