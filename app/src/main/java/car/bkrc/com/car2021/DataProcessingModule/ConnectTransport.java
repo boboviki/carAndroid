@@ -26,6 +26,7 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
+import com.tencent.yolov5ncnn.YoloV5Ncnn;
 
 import org.greenrobot.eventbus.EventBus;
 import org.opencv.android.Utils;
@@ -120,7 +121,7 @@ public class ConnectTransport {
     private static OutputStream SerialOutputStream;
     private InputStream SerialInputStream;
     private boolean Firstdestroy = false;  ////Firstactivity 是否已销毁了
-
+    private YoloV5Ncnn yolov5ncnn = new YoloV5Ncnn();
 
     public void destory() {
         try {
@@ -708,41 +709,33 @@ public class ConnectTransport {
                     break;
                 case 3:
                     Log.d("shape","进入形状识别"+imgReadNum);
-                    if (shapeReadNum<4) {
-                        switch (shapeReadNum)//获取tft中图片的范围，以便裁切，得到retx，rety，disx，disy四个值
+                    image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//第一次获取图片
+                    carShape=new CarShape();
+                    // long current = System.currentTimeMillis();
+                    Bitmap SelectedImage = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
+                    if (SelectedImage == null)
+                        return;
+                    YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(SelectedImage, false);
+                    int x=0;
+                    int y=0;
+                    int w=0;
+                    int h=0;
+                    for(int i=0;i<objects.length;i++)
+                    {
+                        if(objects[i].label=="tft")
                         {
-                            case 0:
-                                image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//第一次获取图片
-                                break;
-                            case 1:
-                                image2 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的需要对比的图片
-                               // CarShape.autoCut(image1, image2);//对比得出不同区域，得到四个重要的参数
-                                break;
-                            case 2:
-                                image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
-                                CarShape.autoCut(image1, image2);//再次对比，提高准确性
-                                break;
-                            case 3:
-                                image2 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
-                                CarShape.autoCut(image1, image2);//再次对比，提高准确性
-                                break;
+                            x=(int)objects[0].x;
+                            y=(int)objects[0].y;
+                            w=(int)objects[0].w;
+                            h=(int)objects[0].h;
                         }
-                        shapeReadNum++;
-                        tftDown();//先让小车发送下翻图片
-                        task_handler.sendEmptyMessageDelayed(3, 2500);//重新进入case3
                     }
-                else {//根据四个重要参数，对图片逐一识别
-                        if(imgReadNum<7){
-                            imgReadNum++;
-                            carShape=new CarShape();
-                           // long current = System.currentTimeMillis();
-                            Bitmap bitmapShape = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
-                            Bitmap bitmap_opencv_cut = CarShape.opencvCutmap( bitmapShape,CarShape.ret_x,CarShape.ret_y,CarShape.dis_x,CarShape.dis_y);;//对前一张图片进行裁切
-                            RightAutoFragment.image_show.setImageBitmap(bitmap_opencv_cut);//显示裁切后的图片
-                            carShape.colorAndShape(bitmap_opencv_cut);//对裁切后的图片进行形状的识别
-                            //Log.d("auto time",(System.currentTimeMillis()-current)+"" );
-                            RightAutoFragment.rec_image_show.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
-                            if ( carShape.shapeResultNum>9)
+                    Bitmap bitmap_cut = CarShape.opencvCutmap(SelectedImage,x,y,w,h);;//对前一张图片进行裁切
+                    RightAutoFragment.image_show.setImageBitmap(bitmap_cut);//显示裁切后的图片
+                   carShape.colorAndShape(bitmap_cut);//对裁切后的图片进行形状的识别
+                    //Log.d("auto time",(System.currentTimeMillis()-current)+"" );
+                   RightAutoFragment.rec_image_show.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
+                    if ( carShape.shapeResultNum>9)
                             {
                                 picShapeNum=imgReadNum;
                                 rednum=carShape.red_num;
@@ -751,7 +744,7 @@ public class ConnectTransport {
                             }
                             tftDown();//先让小车发送下翻图片
                             task_handler.sendEmptyMessageDelayed(3, 2000);//重新进入case3
-                        }else{
+
                             imgReadNum = 0;
                             shapedata="F"+rednum+","+"F"+greennum+","+"F"+bluenum;
                             shapedataarr=shapedata.split(",");
@@ -774,9 +767,6 @@ public class ConnectTransport {
                             send();
                             yanchi(100);
                             send();
-                        }
-                    }
-
                     break;
 
                 case 4:
@@ -846,114 +836,187 @@ public class ConnectTransport {
 
                     break;
 
-                case 30://红绿灯识别:基于相似度进行自动裁切
-                    if (rgbReadNum<3) {//先获取三张图片
-                        switch (rgbReadNum)//获取tft中图片的范围，以便裁切，得到retx，rety，disx，disy四个值
-                        {
-                            case 0:
-                                image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//第一次获取图片
-                                Log.d("rgb", "获取第一张图片" );
-                                break;
-                            case 1:
-                                image2 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的需要对比的图片
-                                Log.d("rgb", "获取第二张图片" );
-                                break;
-                            case 2:
-                                image3 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
-                                Log.d("rgb", "获取第三张图片" );
-                                break;
-                        }
-                        rgbReadNum++;
-                        task_handler.sendEmptyMessageDelayed(1, 600);//重新进入case3
-                    }
-                    else {
-                        if (rgbReadNum < 6)//再循环获取3次，获取多张照片，避免遗漏灯，增加准确度
-                        {
-                            Mat src1 = new Mat();
-                            Mat src2 = new Mat();
-                            Mat src3 = new Mat();
-                            Utils.bitmapToMat(image1, src1);
-                            Utils.bitmapToMat(image2, src2);
-                            Utils.bitmapToMat(image3, src3);
-                            CarRgbLight = new CarRgbLight();
-                            CarRgbLight.imageSubtract3(src1, src2, src3);//做图片对比，找出不同的区域，并画出轮廓
-                            Log.d("rgb", "处理第" + rgbReadNum + "张图片");
-                            switch (rgbReadNum) {
-                                case 3:
-                                    image1 = left_Fragment.bitmap.copy(ARGB_8888, true);
-                                    src1 = new Mat();
-                                    Utils.bitmapToMat(image1, src1);
-                                    break;
-                                case 4:
-                                    image2 = left_Fragment.bitmap.copy(ARGB_8888, true);
-                                    src2 = new Mat();
-                                    Utils.bitmapToMat(image2, src2);
-                                    break;
-                                case 5:
-                                    image3 = left_Fragment.bitmap.copy(ARGB_8888, true);
-                                    src3 = new Mat();
-                                    Utils.bitmapToMat(image3, src3);
-                                    break;
-                                case 6:
-                                    image1 = left_Fragment.bitmap.copy(ARGB_8888, true);
-                                    src3 = new Mat();
-                                    Utils.bitmapToMat(image1, src1);
-                                    break;
-                                case 7:
-                                    image2 = left_Fragment.bitmap.copy(ARGB_8888, true);
-                                    src3 = new Mat();
-                                    Utils.bitmapToMat(image2, src2);
-                                    break;
-//                                case 8:
+                case 30://红绿灯识别:基于相似度进行自动裁切，裁切准确度70%左右，受环境影响较大，弃用
+//                    if (rgbReadNum<3) {//先获取三张图片
+//                        switch (rgbReadNum)//获取tft中图片的范围，以便裁切，得到retx，rety，disx，disy四个值
+//                        {
+//                            case 0:
+//                                image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//第一次获取图片
+//                                Log.d("rgb", "获取第一张图片" );
+//                                break;
+//                            case 1:
+//                                image2 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的需要对比的图片
+//                                Log.d("rgb", "获取第二张图片" );
+//                                break;
+//                            case 2:
+//                                image3 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
+//                                Log.d("rgb", "获取第三张图片" );
+//                                break;
+//                        }
+//                        rgbReadNum++;
+//                        task_handler.sendEmptyMessageDelayed(1, 600);//重新进入case3
+//                    }
+//                    else {
+//                        if (rgbReadNum < 6)//再循环获取3次，获取多张照片，避免遗漏灯，增加准确度
+//                        {
+//                            Mat src1 = new Mat();
+//                            Mat src2 = new Mat();
+//                            Mat src3 = new Mat();
+//                            Utils.bitmapToMat(image1, src1);
+//                            Utils.bitmapToMat(image2, src2);
+//                            Utils.bitmapToMat(image3, src3);
+//                            CarRgbLight = new CarRgbLight();
+//                            CarRgbLight.imageSubtract3(src1, src2, src3);//做图片对比，找出不同的区域，并画出轮廓
+//                            Log.d("rgb", "处理第" + rgbReadNum + "张图片");
+//                            switch (rgbReadNum) {
+//                                case 3:
+//                                    image1 = left_Fragment.bitmap.copy(ARGB_8888, true);
+//                                    src1 = new Mat();
+//                                    Utils.bitmapToMat(image1, src1);
+//                                    break;
+//                                case 4:
+//                                    image2 = left_Fragment.bitmap.copy(ARGB_8888, true);
+//                                    src2 = new Mat();
+//                                    Utils.bitmapToMat(image2, src2);
+//                                    break;
+//                                case 5:
 //                                    image3 = left_Fragment.bitmap.copy(ARGB_8888, true);
 //                                    src3 = new Mat();
 //                                    Utils.bitmapToMat(image3, src3);
 //                                    break;
-                                default:
-                                    break;
-                            }
-                            rgbReadNum++;
-                            task_handler.sendEmptyMessageDelayed(1, 600);//重新进入case3
-                        }
-                        else {
-                            //3秒左右后成功获取红绿灯坐标，进入任务
-                            rgbReadNum = 0;
-                            traffic_control(0x0E, 0x01, 0x00);//发送开始识别指令，比赛最好通过主车发送
-                            Log.d("rgb","已发送识别指令");
-                            yanchi(500);
-                            traffic_control(0x0E, 0x01, 0x00);//再发以便，避免主车未收到
-                            yanchi(500);
-                            bitmapRgb = left_Fragment.bitmap.copy(ARGB_8888, true);
-                            Log.d("rgb","最终坐标："+ "x:"+CarShape.ret_x+"y:"+ CarShape.ret_y+ "disx:"+dis_x+"disy:"+ dis_y);
-                            Bitmap res = CarRgbLight.cutRgbPic(bitmapRgb, CarShape.ret_x, CarShape.ret_y, CarShape.dis_x, CarShape.dis_y);//裁切结果
-                            RightAutoFragment.rec_image_show.setImageBitmap(res);//显示
-                            CarRgbLight.trfficLight(res);//根据相似度得到红绿灯结果
-                            rec_result=CarRgbLight.trffictResult;//将识别的结果放入res
-                            Log.d("rgb","识别结果为："+rec_result);
-                            switch (rec_result)
-                            {
-                                case "red":
-                                    traffic_control(0x0E ,0x02,0x01);
+//                                case 6:
+//                                    image1 = left_Fragment.bitmap.copy(ARGB_8888, true);
+//                                    src3 = new Mat();
+//                                    Utils.bitmapToMat(image1, src1);
+//                                    break;
+//                                case 7:
+//                                    image2 = left_Fragment.bitmap.copy(ARGB_8888, true);
+//                                    src3 = new Mat();
+//                                    Utils.bitmapToMat(image2, src2);
+//                                    break;
+////                                case 8:
+////                                    image3 = left_Fragment.bitmap.copy(ARGB_8888, true);
+////                                    src3 = new Mat();
+////                                    Utils.bitmapToMat(image3, src3);
+////                                    break;
+//                                default:
+//                                    break;
+//                            }
+//                            rgbReadNum++;
+//                            task_handler.sendEmptyMessageDelayed(1, 600);//重新进入case3
+//                        }
+//                        else {
+//                            //3秒左右后成功获取红绿灯坐标，进入任务
+//                            rgbReadNum = 0;
+//                            traffic_control(0x0E, 0x01, 0x00);//发送开始识别指令，比赛最好通过主车发送
+//                            Log.d("rgb","已发送识别指令");
+//                            yanchi(500);
+//                            traffic_control(0x0E, 0x01, 0x00);//再发以便，避免主车未收到
+//                            yanchi(500);
+//                            bitmapRgb = left_Fragment.bitmap.copy(ARGB_8888, true);
+//                            Log.d("rgb","最终坐标："+ "x:"+CarShape.ret_x+"y:"+ CarShape.ret_y+ "disx:"+dis_x+"disy:"+ dis_y);
+//                            Bitmap res = CarRgbLight.cutRgbPic(bitmapRgb, CarShape.ret_x, CarShape.ret_y, CarShape.dis_x, CarShape.dis_y);//裁切结果
+//                            RightAutoFragment.rec_image_show.setImageBitmap(res);//显示
+//                            CarRgbLight.trfficLight(res);//根据相似度得到红绿灯结果
+//                            rec_result=CarRgbLight.trffictResult;//将识别的结果放入res
+//                            Log.d("rgb","识别结果为："+rec_result);
+//                            switch (rec_result)
+//                            {
+//                                case "red":
+//                                    traffic_control(0x0E ,0x02,0x01);
+//
+//                                    Log.d("rgb", "red");
+//                                    break;
+//                                case "green":
+//                                    traffic_control(0x0E ,0x02,0x02);
+//                                    Log.d("rgb", "green");
+//                                    break;
+//
+//                                case "yellow":
+//                                    traffic_control(0x0E ,0x02,0x03);
+//                                    Log.d("rgb", "yellow");
+//                                    break;
+//
+//                                default:
+//                                    traffic_control(0x0E ,0x02,0x01);//其他情况都按红色发送识别
+//                                    break;
+//                            }
+//                        }
+//                    }
+//
+//                    break;
 
-                                    Log.d("rgb", "red");
-                                    break;
-                                case "green":
-                                    traffic_control(0x0E ,0x02,0x02);
-                                    Log.d("rgb", "green");
-                                    break;
 
-                                case "yellow":
-                                    traffic_control(0x0E ,0x02,0x03);
-                                    Log.d("rgb", "yellow");
-                                    break;
-
-                                default:
-                                    traffic_control(0x0E ,0x02,0x01);//其他情况都按红色发送识别
-                                    break;
-                            }
-                        }
-                    }
-
+                case 31://基于翻页确定tft位置,可实现，tft定位准确度80%左右，弃用
+//                    Log.d("shape","进入形状识别"+imgReadNum);
+//                    if (shapeReadNum<4) {
+//                        switch (shapeReadNum)//获取tft中图片的范围，以便裁切，得到retx，rety，disx，disy四个值
+//                        {
+//                            case 0:
+//                                image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//第一次获取图片
+//                                break;
+//                            case 1:
+//                                image2 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的需要对比的图片
+//                                // CarShape.autoCut(image1, image2);//对比得出不同区域，得到四个重要的参数
+//                                break;
+//                            case 2:
+//                                image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
+//                                CarShape.autoCut(image1, image2);//再次对比，提高准确性
+//                                break;
+//                            case 3:
+//                                image2 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
+//                                CarShape.autoCut(image1, image2);//再次对比，提高准确性
+//                                break;
+//                        }
+//                        shapeReadNum++;
+//                        tftDown();//先让小车发送下翻图片
+//                        task_handler.sendEmptyMessageDelayed(3, 2500);//重新进入case3
+//                    }
+//                    else {//根据四个重要参数，对图片逐一识别
+//                        if(imgReadNum<7){
+//                            imgReadNum++;
+//                            carShape=new CarShape();
+//                            // long current = System.currentTimeMillis();
+//                            Bitmap bitmapShape = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
+//                            Bitmap bitmap_opencv_cut = CarShape.opencvCutmap( bitmapShape,CarShape.ret_x,CarShape.ret_y,CarShape.dis_x,CarShape.dis_y);;//对前一张图片进行裁切
+//                            RightAutoFragment.image_show.setImageBitmap(bitmap_opencv_cut);//显示裁切后的图片
+//                            carShape.colorAndShape(bitmap_opencv_cut);//对裁切后的图片进行形状的识别
+//                            //Log.d("auto time",(System.currentTimeMillis()-current)+"" );
+//                            RightAutoFragment.rec_image_show.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
+//                            if ( carShape.shapeResultNum>9)
+//                            {
+//                                picShapeNum=imgReadNum;
+//                                rednum=carShape.red_num;
+//                                greennum=carShape.green_num;
+//                                bluenum=carShape.blue_num;
+//                            }
+//                            tftDown();//先让小车发送下翻图片
+//                            task_handler.sendEmptyMessageDelayed(3, 2000);//重新进入case3
+//                        }else{
+//                            imgReadNum = 0;
+//                            shapedata="F"+rednum+","+"F"+greennum+","+"F"+bluenum;
+//                            shapedataarr=shapedata.split(",");
+//                            int[] num=new int[shapedataarr.length];
+//                            try {
+//                                for (int i=0;i<shapedataarr.length;i++)
+//                                {
+//                                    num[i] = algorithm.OxStringtoInt(shapedataarr[i]);//将16进制字符串转为10进制的int
+//                                }
+//                                shapedata_sho=new short[num.length];
+//                                shapedata_sho=algorithm.shortint2hex(num);
+//                            } catch (Exception e) {
+//                                e.printStackTrace();
+//                            }
+//                            TYPE=0xAA;
+//                            MAJOR = 0x40;
+//                            FIRST =  shapedata_sho[0];//二维码读取到的数据，字符串转为了BYTE，此处将第一位发给小车
+//                            SECOND =  shapedata_sho[1];
+//                            THRID =  shapedata_sho[2];
+//                            send();
+//                            yanchi(100);
+//                            send();
+//                        }
+//                    }
                     break;
 
                 default:

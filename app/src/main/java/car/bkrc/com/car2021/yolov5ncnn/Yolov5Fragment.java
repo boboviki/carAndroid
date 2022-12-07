@@ -36,7 +36,6 @@ import car.bkrc.com.car2021.ViewAdapter.InfrareAdapter;
 import car.bkrc.com.car2021.ViewAdapter.Infrared_Landmark;
 
 public class Yolov5Fragment extends Fragment {
-
     public static final String TAG = "Yolov5";
     public static Yolov5Fragment getInstance() {
         return Yolov5FragmentHolder.sInstance;
@@ -100,25 +99,29 @@ public class Yolov5Fragment extends Fragment {
     private void setListen(){
         SelectPicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View arg0) {//选择图片
                 Intent i = new Intent(Intent.ACTION_PICK);
                 i.setType("image/*");
                 startActivityForResult(i, SELECT_IMAGE);
             }
         });
 
-
         DetectBtnCpu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View arg0) {//视觉识别，通过cpu
                 if (yourSelectedImage == null)
                     return;
                 YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(yourSelectedImage, false);
+               String label = objects[0].label;
+                float x=objects[0].x;
+                float y=objects[0].y;
+                float w=objects[0].w;
+                float h=objects[0].h;
+                float prob=objects[0].prob;
+                Log.d(TAG, "onClick: "+label+"x: "+(int)x+"y: "+(int)y+"w: "+(int)w+"h: "+(int)h+"p: "+(int)prob);
                 showObjects(objects);
-
             }
         });
-
 
         DetectBtnGpu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,10 +210,6 @@ public class Yolov5Fragment extends Fragment {
 
        iv.setImageBitmap(rgba);
     }
-
-
-
-
 
 
     /**选择照片代码模块--->*/
