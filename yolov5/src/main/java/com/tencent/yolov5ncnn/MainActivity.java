@@ -1,3 +1,4 @@
+/*
 // Tencent is pleased to support the open source community by making ncnn available.
 //
 // Copyright (C) 2020 THL A29 Limited, a Tencent company. All rights reserved.
@@ -44,7 +45,9 @@ public class MainActivity extends Activity
 
     private YoloV5Ncnn yolov5ncnn = new YoloV5Ncnn();
 
-    /** Called when the activity is first created. */
+    */
+/** Called when the activity is first created. *//*
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -256,3 +259,4 @@ public class MainActivity extends Activity
     }
 
 }
+*/

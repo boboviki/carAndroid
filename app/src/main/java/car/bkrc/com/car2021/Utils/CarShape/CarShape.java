@@ -352,7 +352,7 @@ public class CarShape {
             Utils.bitmapToMat(bitmap,mat_cut);
             dstmat = new Mat(mat_cut,rect);
         }
-        Bitmap rebitmap = Bitmap.createBitmap(dstmat.width(), dstmat.height(), Bitmap.Config.ARGB_8888);
+        Bitmap rebitmap=Bitmap.createBitmap(dstmat.width(),dstmat.height(),Bitmap.Config.ARGB_8888);
         Utils.matToBitmap(dstmat, rebitmap);//mat转化为bitmap
        // ivRec.setImageBitmap(rebitmap);
         dstmat.release();

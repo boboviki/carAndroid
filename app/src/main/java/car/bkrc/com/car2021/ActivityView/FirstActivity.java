@@ -251,10 +251,10 @@ public class FirstActivity extends AppCompatActivity {
         // 设置一个PositiveButton
         builder.setPositiveButton("开始", (dialog, which) -> {
             dialog.dismiss();
-            Connect_Transport.mark =1;//
+            Connect_Transport.mark =3;//进入形状识别
             Connect_Transport.autoDrive();
 
-            Log.e("cmd", "RgbOpen值为"+RightAutoFragment.RgbOpencvFlag);
+//            Log.e("cmd", "RgbOpen值为"+RightAutoFragment.RgbOpencvFlag);
 //            Connect_Transport.mark=2;
 //            Connect_Transport.autoDrive();
 //             toastUtil.ShowToast( "开始自动驾驶，请检查车辆周围环境！");

@@ -1,3 +1,2 @@
-ninja: Entering directory `D:\00ProjectGit\carAndroid\yolov5\.cxx\cmake\debug\x86'
-[1/2] Building CXX object CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o
-[2/2] Linking CXX shared library D:\00ProjectGit\carAndroid\yolov5\build\intermediates\cmake\debug\obj\x86\libyolov5ncnn.so
+ninja: Entering directory `D:\00ProjetcGit\carAndroid\yolov5\.cxx\cmake\debug\x86'
+ninja: no work to do.

@@ -45,9 +45,9 @@ public class Yolov5Fragment extends Fragment {
     }
     private View view = null;
     private static final int SELECT_IMAGE = 1;
-    private ImageView iv,iv2;
+    public static ImageView iv,iv2;
     private Bitmap bitmap = null;
-    private Bitmap yourSelectedImage = null;
+    public static Bitmap yourSelectedImage = null;
     Button SelectPicBtn,DetectBtnCpu,DetectBtnGpu;
 
 
@@ -164,7 +164,7 @@ public class Yolov5Fragment extends Fragment {
                 Color.rgb(158, 158, 158),
                 Color.rgb(139, 125,  96)
         };
-
+        //画出标注框
         Canvas canvas = new Canvas(rgba);
 
         Paint paint = new Paint();

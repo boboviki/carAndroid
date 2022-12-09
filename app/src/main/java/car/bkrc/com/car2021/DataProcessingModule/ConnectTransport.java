@@ -73,6 +73,7 @@ import car.bkrc.com.car2021.FragmentView.LeftFragment;
 import car.bkrc.com.car2021.FragmentView.RightAutoFragment;
 import car.bkrc.com.car2021.Utils.TrafficRecUtil.ColorRecognition;
 import car.bkrc.com.car2021.ViewAdapter.OtherAdapter;
+import car.bkrc.com.car2021.yolov5ncnn.Yolov5Fragment;
 
 import static android.graphics.Bitmap.Config.ARGB_8888;
 import static org.opencv.imgproc.Imgproc.CHAIN_APPROX_SIMPLE;
@@ -121,6 +122,10 @@ public class ConnectTransport {
     private static OutputStream SerialOutputStream;
     private InputStream SerialInputStream;
     private boolean Firstdestroy = false;  ////Firstactivity 是否已销毁了
+    private int retx=0;
+    private int rety=0;
+    private int w=0;
+    private int h=0;
     private YoloV5Ncnn yolov5ncnn = new YoloV5Ncnn();
 
     public void destory() {
@@ -500,10 +505,10 @@ public class ConnectTransport {
             case 3://形状识别
                 RightAutoFragment = new RightAutoFragment();
                 RightAutoFragment.cleanflag();
-                CarShape.ret_x=0;
-                CarShape.ret_y=0;
-                CarShape.dis_x=0;
-                CarShape.dis_y=0;
+                retx=0;
+                rety=0;
+                w=0;
+                h=0;
                 shapeReadNum=0;
                 message = new Message();
                 message.what = 3;
@@ -708,43 +713,72 @@ public class ConnectTransport {
 
                     break;
                 case 3:
-                    Log.d("shape","进入形状识别"+imgReadNum);
-                    image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//第一次获取图片
-                    carShape=new CarShape();
-                    // long current = System.currentTimeMillis();
-                    Bitmap SelectedImage = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
-                    if (SelectedImage == null)
-                        return;
-                    YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(SelectedImage, false);
-                    int x=0;
-                    int y=0;
-                    int w=0;
-                    int h=0;
-                    for(int i=0;i<objects.length;i++)
+                    if(shapeReadNum<1)//第一次进入
                     {
-                        if(objects[i].label=="tft")
-                        {
-                            x=(int)objects[0].x;
-                            y=(int)objects[0].y;
-                            w=(int)objects[0].w;
-                            h=(int)objects[0].h;
+                        Bitmap SelectedImage=null;
+                        Log.d("shape","进入形状识别"+imgReadNum);
+                        carShape=new CarShape();
+                        // long current = System.currentTimeMillis();
+                        if (left_Fragment.bitmap == null) {
+                            SelectedImage= Yolov5Fragment.yourSelectedImage;
                         }
+                        else{
+                            SelectedImage = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
+                        }
+
+                        YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(SelectedImage, false);
+                        Log.d("yolov", "长度"+objects.length);
+                        for(int i=0;i<objects.length;i++)
+                        {
+                            Log.d("yolov", "长度"+objects[i].label);
+                            if("tft".equals(objects[i].label))
+                            {
+                                Log.d("yolov", "x"+objects[i].x);
+                                retx=(int)objects[i].x;
+                                rety=(int)objects[i].y;
+                                w=(int)objects[i].w;
+                                h=(int)objects[i].h;
+                            }
+                            Log.d("yolov", "x:"+retx+"y:"+rety+"w:"+w+"h:"+h);
+                        }
+                        Log.d("yolov", "x:"+retx+"y:"+rety+"w:"+w+"h:"+h+"长度"+objects.length);
+                        Bitmap bitmap_cut = CarShape.opencvCutmap(SelectedImage,retx,rety,w,h);;//对前一张图片进行裁切
+                        RightAutoFragment.image_show.setImageBitmap(bitmap_cut);//显示裁切后的图片
+                        carShape.colorAndShape(bitmap_cut);//对裁切后的图片进行形状的识别
+                        //Log.d("auto time",(System.currentTimeMillis()-current)+"" );
+                        RightAutoFragment.rec_image_show.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
+                        shapeReadNum++;
+                        tftDown();//先让小车发送下翻图片
+                        task_handler.sendEmptyMessageDelayed(3, 2500);//重新进入case3
                     }
-                    Bitmap bitmap_cut = CarShape.opencvCutmap(SelectedImage,x,y,w,h);;//对前一张图片进行裁切
-                    RightAutoFragment.image_show.setImageBitmap(bitmap_cut);//显示裁切后的图片
-                   carShape.colorAndShape(bitmap_cut);//对裁切后的图片进行形状的识别
-                    //Log.d("auto time",(System.currentTimeMillis()-current)+"" );
-                   RightAutoFragment.rec_image_show.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
-                    if ( carShape.shapeResultNum>9)
+                    else{
+                        if(shapeReadNum<7){
+                            Bitmap SelectedImage=null;
+                            carShape=new CarShape();
+                            // long current = System.currentTimeMillis();
+                            if (left_Fragment.bitmap == null) {
+                                SelectedImage= Yolov5Fragment.yourSelectedImage;
+                            }
+                            else{
+                                SelectedImage = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
+                            }
+                            Yolov5Fragment.iv.setImageBitmap(SelectedImage);//显示轮廓图像
+                            Bitmap bitmap_cut = CarShape.opencvCutmap(SelectedImage,retx,rety,w,h);;//对前一张图片进行裁切
+                            carShape.colorAndShape(bitmap_cut);//对裁切后的图片进行形状的识别
+                            if ( carShape.shapeResultNum>9)//判断识别的形状是否大于9个
                             {
                                 picShapeNum=imgReadNum;
                                 rednum=carShape.red_num;
                                 greennum=carShape.green_num;
                                 bluenum=carShape.blue_num;
                             }
+                            //Log.d("auto time",(System.currentTimeMillis()-current)+"" );
+                            Yolov5Fragment.iv2.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
+                            shapeReadNum++;
                             tftDown();//先让小车发送下翻图片
-                            task_handler.sendEmptyMessageDelayed(3, 2000);//重新进入case3
-
+                            task_handler.sendEmptyMessageDelayed(3, 2500);//重新进入case3
+                        }
+                        else{//识别的数据处理
                             imgReadNum = 0;
                             shapedata="F"+rednum+","+"F"+greennum+","+"F"+bluenum;
                             shapedataarr=shapedata.split(",");
@@ -767,6 +801,10 @@ public class ConnectTransport {
                             send();
                             yanchi(100);
                             send();
+                        }
+                    }
+
+
                     break;
 
                 case 4:
@@ -800,14 +838,14 @@ public class ConnectTransport {
                             Bitmap bitmap_opencv_cut = CarShape.opencvCutmap( bitmapShape,CarShape.ret_x,CarShape.ret_y,CarShape.dis_x,CarShape.dis_y);;//对前一张图片进行裁切
                             RightAutoFragment.image_show.setImageBitmap(bitmap_opencv_cut);//显示裁切后的图片
                             carPlate.plateDetector(bitmap_opencv_cut);
-                            //RightAutoFragment.rec_image_show.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
-//                            if ( carShape.shapeResultNum>9)
-//                            {
-//                                picShapeNum=imgReadNum;
-//                                rednum=carShape.red_num;
-//                                greennum=carShape.green_num;
-//                                bluenum=carShape.blue_num;
-//                            }
+                            Yolov5Fragment.iv2.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
+                            if ( carShape.shapeResultNum>9)
+                            {
+                                picShapeNum=imgReadNum;
+                                rednum=carShape.red_num;
+                                greennum=carShape.green_num;
+                                bluenum=carShape.blue_num;
+                            }
                             tftDown();//先让小车发送下翻图片
                             task_handler.sendEmptyMessageDelayed(4, 2000);//重新进入case3
                         }else{

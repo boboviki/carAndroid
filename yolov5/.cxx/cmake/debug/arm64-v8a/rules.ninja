@@ -17,7 +17,7 @@
 rule CXX_COMPILER__yolov5ncnn
   depfile = $DEP_FILE
   deps = gcc
-  command = D:\adt-bundle-windows\sdk\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = D:\adt-bundle-windows\Sdk\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/adt-bundle-windows/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/adt-bundle-windows/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -25,7 +25,7 @@ rule CXX_COMPILER__yolov5ncnn
 # Rule for linking CXX shared library.
 
 rule CXX_SHARED_LIBRARY_LINKER__yolov5ncnn
-  command = cmd.exe /C "$PRE_LINK && D:\adt-bundle-windows\sdk\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && D:\adt-bundle-windows\Sdk\ndk\21.4.7075529\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android24 --gcc-toolchain=D:/adt-bundle-windows/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/adt-bundle-windows/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC $LANGUAGE_COMPILE_FLAGS $ARCH_FLAGS $LINK_FLAGS -shared $SONAME_FLAG$SONAME -o $TARGET_FILE $in $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX shared library $TARGET_FILE
   restat = $RESTAT
 
@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\00ProjectGit\carAndroid\yolov5\src\main\jni -BD:\00ProjectGit\carAndroid\yolov5\.cxx\cmake\debug\arm64-v8a
+  command = D:\adt-bundle-windows\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\00ProjetcGit\carAndroid\yolov5\src\main\jni -BD:\00ProjetcGit\carAndroid\yolov5\.cxx\cmake\debug\arm64-v8a
   description = Re-running CMake...
   generator = 1
 
@@ -51,7 +51,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe -t clean
+  command = D:\adt-bundle-windows\Sdk\cmake\3.10.2.4988404\bin\ninja.exe -t clean
   description = Cleaning all built files...
 
 
@@ -59,6 +59,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe -t targets
+  command = D:\adt-bundle-windows\Sdk\cmake\3.10.2.4988404\bin\ninja.exe -t targets
   description = All primary targets available:
 
