@@ -33,7 +33,6 @@ android {
     task ndkBuild(type: Exec) {
         def ndkDirProperty = properties.getProperty('ndk.dir')
         def ndkDirPrefix = ndkDirProperty != null ? ndkDirProperty + '/' : ''
-
         def ndkBuildExt = Os.isFamily(Os.FAMILY_WINDOWS) ? ".cmd" : ""
 
         commandLine "${ndkDirPrefix}ndk-build${ndkBuildExt}", '-C', file('.').absolutePath,

@@ -585,22 +585,7 @@ public class ConnectTransport {
         public void handleMessage(@NonNull Message msg) {
             switch (msg.what)
             {
-                case 1://红绿灯识别:基于霍夫圆进行区域提取，结合相似度对红绿灯进行判断
-                    int[] Point=null;
-                    image1 = left_Fragment.bitmap.copy(ARGB_8888, true);
-                    bitmapRgb = left_Fragment.bitmap.copy(ARGB_8888, true);
-                    CarRgbLight = new CarRgbLight();
-                    Point=CarRgbLight.HoughCircles(image1);
-                    int getCircle=5;
-                    while(getCircle!=0){
-                        if (CarRgbLight.HoughCircles_num<3){
-                            Point=CarRgbLight.HoughCircles(image1);
-                            getCircle--; //多次获取
-                        }
-                        else{
-                            getCircle=0;
-                        }
-                    }
+                case 1://红绿灯识别:基于yolov5
                     yanchi(500);
                     traffic_control(0x0E, 0x01, 0x00);//再发一遍，避免主车未收到
                     yanchi(500);
@@ -609,17 +594,32 @@ public class ConnectTransport {
                     traffic_control(0x0E, 0x01, 0x00);//再发一遍，避免主车未收到
                     yanchi(1000);
                     Log.d("rgb","已发送识别指令");
-                    Bitmap  bitmapRgbsrc= left_Fragment.bitmap.copy(ARGB_8888, true);
-                    RightAutoFragment.image_show.setImageBitmap(bitmapRgbsrc);//显示
-                    Log.d("rgb","最终坐标："+ "x:"+Point[0]+"y:"+ Point[1]+ "disx:"+Point[2]+"disy:"+ Point[3]);
-                    CarRgbLight=new CarRgbLight();
-                    Bitmap  bitmapRgbdst=CarRgbLight.cutRgbPic(bitmapRgbsrc,Point[0],Point[1],Point[2],Point[3]);
-                    RightAutoFragment.rec_image_show.setImageBitmap( bitmapRgbdst);//显示
-                    BitmapUtils.saveBitmap(bitmapRgbdst,"/DCIM/Car/",".png");//保存图片
-                    CarRgbLight.trfficLight( bitmapRgbdst);//根据相似度得到红绿灯结果
-                    rec_result=CarRgbLight.trffictResult;//将识别的结果放入res
+                    Bitmap  BitmaptrfficLight;
+                    if (left_Fragment.bitmap == null) {
+                        BitmaptrfficLight= Yolov5Fragment.yourSelectedImage;
+                    }
+                    else{
+                        BitmaptrfficLight= left_Fragment.bitmap.copy(ARGB_8888, true);
+                        Yolov5Fragment.iv.setImageBitmap(BitmaptrfficLight);//显示//获取更新后的图片
+                    }
+                    BitmapUtils.saveBitmap(BitmaptrfficLight,"/DCIM/Car/",".png");//保存图片
+                    YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(BitmaptrfficLight, false);
 
-                    Log.d("rgb","识别结果为："+rec_result);
+                    for(int i=0;i<objects.length;i++)
+                    {
+                        if("green".equals(objects[i].label)||"green_cir".equals(objects[i].label))
+                        {
+                            rec_result="green";//将识别的结果放入res
+                        }
+                        if("red".equals(objects[i].label)||"red_cir".equals(objects[i].label))
+                        {
+                            rec_result="red";//将识别的结果放入res
+                        }
+                        if("yellow".equals(objects[i].label)||"yellow_cir".equals(objects[i].label))
+                        {
+                            rec_result="yellow";//将识别的结果放入res
+                        }
+                    }
                     switch (rec_result)
                     {
                         case "red":
@@ -726,7 +726,7 @@ public class ConnectTransport {
                             SelectedImage = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
                         }
 
-                        YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(SelectedImage, false);
+                        objects = yolov5ncnn.Detect(SelectedImage, false);
                         Log.d("yolov", "长度"+objects.length);
                         for(int i=0;i<objects.length;i++)
                         {
@@ -1057,6 +1057,75 @@ public class ConnectTransport {
 //                    }
                     break;
 
+
+                case 32://红绿灯识别:基于霍夫圆进行区域提取，结合相似度对红绿灯进行判断,裁切准确率80%左右，识别准确率95%，可选
+                    int[] Point=null;
+                    image1 = left_Fragment.bitmap.copy(ARGB_8888, true);
+                    bitmapRgb = left_Fragment.bitmap.copy(ARGB_8888, true);
+                    CarRgbLight = new CarRgbLight();
+                    Point=CarRgbLight.HoughCircles(image1);
+                    int getCircle=5;
+                    while(getCircle!=0){
+                        if (CarRgbLight.HoughCircles_num<3){
+                            Point=CarRgbLight.HoughCircles(image1);
+                            getCircle--; //多次获取
+                        }
+                        else{
+                            getCircle=0;
+                        }
+                    }
+                    yanchi(500);
+                    traffic_control(0x0E, 0x01, 0x00);//再发一遍，避免主车未收到
+                    yanchi(500);
+                    traffic_control(0x0E, 0x01, 0x00);//再发一遍，避免主车未收到
+                    yanchi(500);
+                    traffic_control(0x0E, 0x01, 0x00);//再发一遍，避免主车未收到
+                    yanchi(1000);
+                    Log.d("rgb","已发送识别指令");
+                    Bitmap  bitmapRgbsrc= left_Fragment.bitmap.copy(ARGB_8888, true);
+                    RightAutoFragment.image_show.setImageBitmap(bitmapRgbsrc);//显示
+                    Log.d("rgb","最终坐标："+ "x:"+Point[0]+"y:"+ Point[1]+ "disx:"+Point[2]+"disy:"+ Point[3]);
+                    CarRgbLight=new CarRgbLight();
+                    Bitmap  bitmapRgbdst=CarRgbLight.cutRgbPic(bitmapRgbsrc,Point[0],Point[1],Point[2],Point[3]);
+                    RightAutoFragment.rec_image_show.setImageBitmap( bitmapRgbdst);//显示
+                    BitmapUtils.saveBitmap(bitmapRgbdst,"/DCIM/Car/",".png");//保存图片
+                    CarRgbLight.trfficLight( bitmapRgbdst);//根据相似度得到红绿灯结果
+                    rec_result=CarRgbLight.trffictResult;//将识别的结果放入res
+
+                    Log.d("rgb","识别结果为："+rec_result);
+                    switch (rec_result)
+                    {
+                        case "red":
+                            yanchi(500);
+                            traffic_control(0x0E ,0x02,0x01);
+                            yanchi(500);
+                            traffic_control(0x0E ,0x02,0x01);
+                            Log.d("rgb", "发送指令red");
+                            break;
+                        case "green":
+                            yanchi(500);
+                            traffic_control(0x0E ,0x02,0x02);
+                            yanchi(500);
+                            traffic_control(0x0E ,0x02,0x02);
+                            Log.d("rgb", "发送指令green");
+                            break;
+
+                        case "yellow":
+                            yanchi(500);
+                            traffic_control(0x0E ,0x02,0x03);
+                            yanchi(500);
+                            traffic_control(0x0E ,0x02,0x03);
+                            Log.d("rgb", "发送指令yellow");
+                            break;
+
+                        default:
+                            yanchi(500);
+                            traffic_control(0x0E ,0x02,0x01);//其他情况都按红色发送识别
+                            yanchi(500);
+                            traffic_control(0x0E ,0x02,0x01);//其他情况都按红色发送识别
+                            break;
+                    }
+                    break;
                 default:
                     break;
             }

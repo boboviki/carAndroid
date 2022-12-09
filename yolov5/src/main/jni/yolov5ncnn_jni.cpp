@@ -529,7 +529,12 @@ JNIEXPORT jobjectArray JNICALL Java_com_tencent_yolov5ncnn_YoloV5Ncnn_Detect(JNI
         "hair drier", "toothbrush"
     };*/
     static const char* class_names[] = {
-            "tft"
+            "tft","trafficSign","green","yellow","red","tft","plate","QRCode","go","stop","back","turnRight",
+            "turnLeft","turnRound","black_tri","black_rect","black_rhomb","black_star","black_cir","white_tri",
+            "white_rect","white_rhomb","white_star","white_cir","red_tri","red_rect","red_rhomb","red_star",
+            "red_cir","green_tri","green_rect","green_rhomb","green_star","green_cir","blue_tri","blue_rect",
+            "blue_rhomb","blue_star","blue_cir","yellow_tri","yellow_rect","yellow_rhomb","yellow_star",
+            "yellow_cir","purple_tri","purple_rect","purple_rhomb","purple_star","purple_cir"
     };
 
     jobjectArray jObjArray = env->NewObjectArray(objects.size(), objCls, NULL);
