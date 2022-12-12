@@ -3,3 +3,7 @@
 1247	2332	692108503	D:/00ProjetcGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/x86_64/libyolov5ncnn.so	919844aa180306f
 78	1561	692274742	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	e690b7cb93f9c23f
 1561	3812	692274745	D:/00ProjetcGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/x86_64/libyolov5ncnn.so	919844aa180306f
+0	14	0	clean	f0d53d5eb7543afa
+1	17	0	clean	f0d53d5eb7543afa
+24	1907	692524339	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	e690b7cb93f9c23f
+1908	3974	692524341	D:/00ProjetcGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/x86_64/libyolov5ncnn.so	919844aa180306f

@@ -1,14 +1,14 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:17:1-19:12
-INJECTED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:17:1-19:12
-INJECTED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:17:1-19:12
+ADDED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:1:1-3:12
+INJECTED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:1:1-3:12
+INJECTED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:1:1-3:12
 	package
-		ADDED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:17:11-53
+		ADDED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:1:11-53
 		INJECTED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml
 		INJECTED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:17:1-19:12
+		ADDED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml:1:1-3:12
 uses-sdk
 INJECTED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\00ProjetcGit\carAndroid\tess-two\AndroidManifest.xml

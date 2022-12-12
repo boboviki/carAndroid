@@ -90,10 +90,10 @@ public class FirstActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {//增加功能页面
             switch (item.getItemId()) {
-                case R.id.auto_page_item:
+                case R.id.yolov5_page_item:
                     mLateralViewPager.setCurrentItem(0);
                     return true;
-                case R.id.yolov5_page_item:
+                case R.id.auto_page_item:
                     mLateralViewPager.setCurrentItem(1);
                     return true;
                 case R.id.home_page_item:
@@ -185,8 +185,8 @@ public class FirstActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(RightAutoFragment.getInstance());
         adapter.addFragment(Yolov5Fragment.getInstance());
+        adapter.addFragment(RightAutoFragment.getInstance());
         adapter.addFragment(RightFragment1.getInstance());
         adapter.addFragment(RightZigbeeFragment.getInstance());
         adapter.addFragment(RightInfraredFragment.getInstance());
@@ -251,7 +251,7 @@ public class FirstActivity extends AppCompatActivity {
         // 设置一个PositiveButton
         builder.setPositiveButton("开始", (dialog, which) -> {
             dialog.dismiss();
-            Connect_Transport.mark =3;//进入形状识别
+            Connect_Transport.mark =1;//进入形状识别
             Connect_Transport.autoDrive();
 
 //            Log.e("cmd", "RgbOpen值为"+RightAutoFragment.RgbOpencvFlag);

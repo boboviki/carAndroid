@@ -1,5 +1,7 @@
 package car.bkrc.com.car2021.yolov5ncnn;
 
+import static android.graphics.Bitmap.Config.ARGB_8888;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -208,7 +210,7 @@ public class Yolov5Fragment extends Fragment {
 
        iv.setImageBitmap(rgba);
     }
-
+    public static LeftFragment left_Fragment;
 
     /**选择照片代码模块--->*/
     @Override

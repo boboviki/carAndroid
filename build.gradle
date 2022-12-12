@@ -4,25 +4,33 @@ buildscript {
     repositories {
         jcenter()
         //google()
-        maven { url 'https://maven.aliyun.com/repository/google' } //google
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven {  url 'https://maven.aliyun.com/repository/google' } //google
+        maven {   url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven {
+//            allowInsecureProtocol = true
+            url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
     }
     dependencies {
+        classpath 'com.android.tools.build:gradle'
         classpath 'com.android.tools.build:gradle:4.2.2'
 
         // NOTE: Do not place your application dependencies here; they belong
+        //插件版本，非gradle版本，对应关系参考网站https://developer.android.google.cn/studio/releases/gradle-plugin.html
         // in the individual module build.gradle files
     }
 }
 
+ext {
+    junitVersion = '4.12'
+}
+
 allprojects {
     repositories {
-        //google()
+        google()
         jcenter()
-        maven { url 'https://maven.aliyun.com/repository/google' } //google
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
-        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven {  url 'https://maven.aliyun.com/repository/google' } //google
+        maven {  url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven {  url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
     }
 }
 
