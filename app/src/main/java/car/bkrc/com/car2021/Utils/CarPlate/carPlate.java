@@ -3,9 +3,6 @@ package car.bkrc.com.car2021.Utils.CarPlate;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
-
-import com.googlecode.tesseract.android.TessBaseAPI;
-
 import org.opencv.android.Utils;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
@@ -650,19 +647,19 @@ public class carPlate {
      * @return 识别结果字符串
      */
     public String doOcr(Bitmap bitmap, String language) {
-//        if (language == null)
+/*//        if (language == null)
 //            language = "eng";
         TessBaseAPI baseApi = new TessBaseAPI();
         FirstActivity firstActivity = new FirstActivity();
         // 必须加此行，tess-two要求BMP必须为此配置
         Log.e("语言包路径", "/sdcard/Download/");
-         /*
+         *//*
         参数一：路径下 需要有tessdata 语言包
         (例如：/sdcard/Download/tessdata/eng.traineddata)
         参数二： 设置识别语言包
         chi_sim:简体中文
         eng:英文
-        * */
+        * *//*
         baseApi.init("/sdcard/Download/WeiXin", language);
         //白名单
         baseApi.setVariable(TessBaseAPI.VAR_CHAR_WHITELIST, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
@@ -678,7 +675,8 @@ public class carPlate {
 
         baseApi.end();
 
-        return text;
+        return text;*/
+        return null;
     }
 
 

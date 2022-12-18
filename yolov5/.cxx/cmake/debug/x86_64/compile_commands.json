@@ -1,7 +1,7 @@
 [
 {
-  "directory": "D:/00ProjetcGit/carAndroid/yolov5/.cxx/cmake/debug/x86_64",
-  "command": "D:\\adt-bundle-windows\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android24 --gcc-toolchain=D:/adt-bundle-windows/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/adt-bundle-windows/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dyolov5ncnn_EXPORTS -isystem D:/00ProjetcGit/carAndroid/yolov5/src/main/jni/x86_64/include/ncnn  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -fno-rtti -fno-exceptions -o CMakeFiles\\yolov5ncnn.dir\\yolov5ncnn_jni.cpp.o -c D:\\00ProjetcGit\\carAndroid\\yolov5\\src\\main\\jni\\yolov5ncnn_jni.cpp",
-  "file": "D:\\00ProjetcGit\\carAndroid\\yolov5\\src\\main\\jni\\yolov5ncnn_jni.cpp"
+  "directory": "D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/debug/x86_64",
+  "command": "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android24 --gcc-toolchain=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dyolov5ncnn_EXPORTS -isystem D:/00ProjectGit/carAndroid-1210/yolov5/src/main/jni/x86_64/include/ncnn  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -fno-rtti -fno-exceptions -o CMakeFiles\\yolov5ncnn.dir\\yolov5ncnn_jni.cpp.o -c D:\\00ProjectGit\\carAndroid-1210\\yolov5\\src\\main\\jni\\yolov5ncnn_jni.cpp",
+  "file": "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\src\\main\\jni\\yolov5ncnn_jni.cpp"
 }
 ]

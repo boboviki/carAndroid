@@ -1,4 +1,4 @@
-include ':app',':library',':tess-two'
+include ':app',':library'
 include ':openCVLibrary343'
 
 include ':yolov5'

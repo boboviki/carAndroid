@@ -512,7 +512,10 @@ public class ConnectTransport {
                 CarShape.dis_x=0;
                 CarShape.dis_y=0;
                 rgbReadNum = 0;
-                task_handler.sendEmptyMessageDelayed(1, 100);//红绿灯识别，基于opencv
+                message = new Message();
+                message.what = 1;
+                task_handler.sendMessage(message);//红绿灯识别
+                //task_handler.sendEmptyMessageDelayed(1, 100);//红绿灯识别，基于opencv
                 mark=0;
                 break;
             case 2://二维码识别
@@ -531,10 +534,10 @@ public class ConnectTransport {
                 rety=0;
                 w=0;
                 h=0;
-                shapeZero();//形状数字归0
+                shapeZero();//形状统计数字归0
                 shapeReadNum=0;
                 message = new Message();
-                message.what = 50;
+                message.what = 3;
                 task_handler.sendMessage(message);//形状及颜色识别，基于opencv
                 mark=0;
                 break;
@@ -743,12 +746,13 @@ public class ConnectTransport {
                         Bitmap SelectedImage=null;
                         carShape=new CarShape();
                         // long current = System.currentTimeMillis();
-                        SelectedImage = left_Fragment.bitmap.copy(ARGB_8888, true);
-                        Yolov5Fragment.iv.setImageBitmap(SelectedImage);
-                        if (SelectedImage == null) {
-                            SelectedImage= Yolov5Fragment.yourSelectedImage;
+                        if (left_Fragment.bitmap!=null){
+                            SelectedImage = left_Fragment.bitmap.copy(ARGB_8888, true);
                         }
-
+                        else{
+                            SelectedImage=Yolov5Fragment.yourSelectedImage;
+                         }
+                        Yolov5Fragment.iv.setImageBitmap(SelectedImage);
                         objects = yolov5ncnn.Detect(SelectedImage, false);
                         Log.d("yolov", "长度"+objects.length);
                         shapeReadNum++;
@@ -764,10 +768,8 @@ public class ConnectTransport {
                                     h=(int)objects[i].h;
                                     Log.d("yolov", "x:"+retx+"y:"+rety+"w:"+w+"h:"+h+"长度"+objects.length);
                                     Bitmap bitmap_cut = CarShape.opencvCutmap(SelectedImage,retx,rety,w,h);;//对前一张图片进行裁切
-                                    RightAutoFragment.image_show.setImageBitmap(bitmap_cut);//显示裁切后的图片
-                                    carShape.colorAndShape(bitmap_cut);//对裁切后的图片进行形状的识别
+                                    Yolov5Fragment.iv2.setImageBitmap(bitmap_cut);//显示裁切后的图片
                                     //Log.d("auto time",(System.currentTimeMillis()-current)+"" );
-                                    RightAutoFragment.rec_image_show.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
                                     break;
 
                                 case "black_tri":     black_tri++;      break;

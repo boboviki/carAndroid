@@ -2,21 +2,21 @@
   {
     "level": "INFO",
     "message": "Start JSON generation. Platform version: 24 min SDK version: x86",
-    "file": "D:\\00ProjetcGit\\carAndroid\\yolov5\\src\\main\\jni\\CMakeLists.txt",
+    "file": "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\src\\main\\jni\\CMakeLists.txt",
     "tag": "debug|x86",
     "diagnosticCode": "UNKNOWN"
   },
   {
     "level": "INFO",
-    "message": "JSON \u0027D:\\00ProjetcGit\\carAndroid\\yolov5\\.cxx\\cmake\\debug\\x86\\android_gradle_build.json\u0027 was up-to-date",
-    "file": "D:\\00ProjetcGit\\carAndroid\\yolov5\\src\\main\\jni\\CMakeLists.txt",
+    "message": "JSON \u0027D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\debug\\x86\\android_gradle_build.json\u0027 was up-to-date",
+    "file": "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\src\\main\\jni\\CMakeLists.txt",
     "tag": "debug|x86",
     "diagnosticCode": "UNKNOWN"
   },
   {
     "level": "INFO",
     "message": "JSON generation completed without problems",
-    "file": "D:\\00ProjetcGit\\carAndroid\\yolov5\\src\\main\\jni\\CMakeLists.txt",
+    "file": "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\src\\main\\jni\\CMakeLists.txt",
     "tag": "debug|x86",
     "diagnosticCode": "UNKNOWN"
   }

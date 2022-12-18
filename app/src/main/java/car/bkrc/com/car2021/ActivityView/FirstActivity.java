@@ -251,7 +251,7 @@ public class FirstActivity extends AppCompatActivity {
         // 设置一个PositiveButton
         builder.setPositiveButton("开始", (dialog, which) -> {
             dialog.dismiss();
-            Connect_Transport.mark =1;//进入形状识别
+            Connect_Transport.mark =3;//
             Connect_Transport.autoDrive();
 
 //            Log.e("cmd", "RgbOpen值为"+RightAutoFragment.RgbOpencvFlag);

@@ -1,9 +1,3 @@
 # ninja log v5
-0	1386	692108497	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	45e8ac025a24c61c
-1387	2379	692108498	D:/00ProjetcGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/armeabi-v7a/libyolov5ncnn.so	92631d0edf34e1a9
-465	5330	692274728	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	45e8ac025a24c61c
-5330	8001	692274731	D:/00ProjetcGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/armeabi-v7a/libyolov5ncnn.so	92631d0edf34e1a9
-0	12	0	clean	f0d53d5eb7543afa
-0	138	0	clean	f0d53d5eb7543afa
-312	5024	692524328	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	45e8ac025a24c61c
-5024	7010	692524330	D:/00ProjetcGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/armeabi-v7a/libyolov5ncnn.so	92631d0edf34e1a9
+2	686	692693622	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	39bd0ea4a69b3ad
+687	1111	692693622	D:/00ProjectGit/carAndroid-1210/yolov5/build/intermediates/cmake/debug/obj/armeabi-v7a/libyolov5ncnn.so	90098851df7d8dd3

@@ -16,8 +16,8 @@
 16    -->
 17    <uses-sdk
 18        android:minSdkVersion="24"
-18-->D:\00ProjetcGit\carAndroid\yolov5\src\main\AndroidManifest.xml
+18-->D:\00ProjectGit\carAndroid-1210\yolov5\src\main\AndroidManifest.xml
 19        android:targetSdkVersion="30" />
-19-->D:\00ProjetcGit\carAndroid\yolov5\src\main\AndroidManifest.xml
+19-->D:\00ProjectGit\carAndroid-1210\yolov5\src\main\AndroidManifest.xml
 20
 21</manifest>
