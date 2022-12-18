@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\00ProjectGit\carAndroid-1210\yolov5\src\main\jni -BD:\00ProjectGit\carAndroid-1210\yolov5\.cxx\cmake\debug\x86
+  command = D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\cmake.exe -HD:\00ProjectGit\carAndroid\yolov5\src\main\jni -BD:\00ProjectGit\carAndroid\yolov5\.cxx\cmake\debug\x86
   description = Re-running CMake...
   generator = 1
 

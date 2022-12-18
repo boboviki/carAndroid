@@ -2,23 +2,27 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/carAndroid-1210.iml" filepath="$PROJECT_DIR$/.idea/modules/carAndroid-1210.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carAndroid-1210.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carAndroid-1210.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carAndroid-1210.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carAndroid-1210.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carAndroid-1210.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carAndroid-1210.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carAndroid-1210.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carAndroid-1210.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/carAndroid-1210.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/carAndroid-1210.library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/carAndroid-1210.library.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/carAndroid-1210.library.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/carAndroid-1210.library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/carAndroid-1210.library.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/carAndroid-1210.library.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/carAndroid-1210.library.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid-1210.openCVLibrary343.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid-1210.openCVLibrary343.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid-1210.openCVLibrary343.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid-1210.openCVLibrary343.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid-1210.openCVLibrary343.main.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid-1210.openCVLibrary343.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid-1210.openCVLibrary343.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid-1210.openCVLibrary343.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid-1210.yolov5.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid-1210.yolov5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid-1210.yolov5.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid-1210.yolov5.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid-1210.yolov5.main.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid-1210.yolov5.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid-1210.yolov5.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid-1210.yolov5.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/carAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/carAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carAndroid.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carAndroid.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carAndroid.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carAndroid.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carAndroid.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carAndroid.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carAndroid.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carAndroid.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/carAndroid.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/carAndroid.library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/carAndroid.library.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/carAndroid.library.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/carAndroid.library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/carAndroid.library.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/carAndroid.library.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/carAndroid.library.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid.openCVLibrary343.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid.openCVLibrary343.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid.openCVLibrary343.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid.openCVLibrary343.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid.openCVLibrary343.main.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid.openCVLibrary343.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid.openCVLibrary343.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary343/carAndroid.openCVLibrary343.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tesseract/carAndroid.tesseract.iml" filepath="$PROJECT_DIR$/.idea/modules/tesseract/carAndroid.tesseract.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tesseract/carAndroid.tesseract.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tesseract/carAndroid.tesseract.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tesseract/carAndroid.tesseract.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tesseract/carAndroid.tesseract.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tesseract/carAndroid.tesseract.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tesseract/carAndroid.tesseract.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.main.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/yolov5/carAndroid.yolov5.unitTest.iml" />
     </modules>
   </component>
 </project>

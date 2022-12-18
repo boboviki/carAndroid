@@ -1,20 +1,20 @@
 {
   "stringTable": {},
   "buildFiles": [
-    "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\src\\main\\jni\\CMakeLists.txt"
+    "D:\\00ProjectGit\\carAndroid\\yolov5\\src\\main\\jni\\CMakeLists.txt"
   ],
   "cleanCommandsComponents": [
     [
       "D:\\adt-bundle-windows\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
       "-C",
-      "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\debug\\arm64-v8a",
+      "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\debug\\arm64-v8a",
       "clean"
     ]
   ],
   "buildTargetsCommandComponents": [
     "D:\\adt-bundle-windows\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
     "-C",
-    "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\debug\\arm64-v8a",
+    "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\debug\\arm64-v8a",
     "{LIST_OF_TARGETS_TO_BUILD}"
   ],
   "libraries": {
@@ -22,13 +22,13 @@
       "buildCommandComponents": [
         "D:\\adt-bundle-windows\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
         "-C",
-        "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\debug\\arm64-v8a",
+        "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\debug\\arm64-v8a",
         "yolov5ncnn"
       ],
       "buildType": "debug",
       "abi": "arm64-v8a",
       "artifactName": "yolov5ncnn",
-      "output": "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libyolov5ncnn.so",
+      "output": "D:\\00ProjectGit\\carAndroid\\yolov5\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libyolov5ncnn.so",
       "runtimeFiles": []
     }
   },

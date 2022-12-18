@@ -18,6 +18,7 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.bkrc.car2019.tesseract.MainActivity;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.ChecksumException;
 import com.google.zxing.DecodeHintType;
@@ -118,6 +119,7 @@ public class ConnectTransport {
     public static CarShape carShape;
     public static carPlate carPlate;
     public static CarRgbLight CarRgbLight;
+    public static MainActivity tesseract;
 
     private static OutputStream SerialOutputStream;
     private InputStream SerialInputStream;
@@ -496,6 +498,10 @@ public class ConnectTransport {
     public static String[] qr_resultArr;
     public static String rec_result = "red";
     public static String qr_result = "识别中……";
+    public static String qr_result1 = "二维码1识别中……";
+    public static String qr_result2 = "二维码2识别中……";
+    public static String qr_result3 = "二维码3识别中……";
+    public static String qr_result4 = "二维码4识别中……";
     public static int[] Pic=null;
     private Message message;
     // 程序自动执行
@@ -505,6 +511,7 @@ public class ConnectTransport {
         {
 
             case 1://红绿灯识别
+                //以下代码通过yolov5方式，不会用到。
                 RightAutoFragment = new RightAutoFragment();
                 RightAutoFragment.cleanflag();
                 CarShape.ret_x=0;
@@ -512,6 +519,7 @@ public class ConnectTransport {
                 CarShape.dis_x=0;
                 CarShape.dis_y=0;
                 rgbReadNum = 0;
+                //以上代码通过yolov5方式，不会用到。
                 message = new Message();
                 message.what = 1;
                 task_handler.sendMessage(message);//红绿灯识别
@@ -629,6 +637,7 @@ public class ConnectTransport {
                         Yolov5Fragment.iv.setImageBitmap(BitmaptrfficLight);//显示//获取更新后的图片
                     }
                     BitmapUtils.saveBitmap(BitmaptrfficLight,"/DCIM/Car/",".png");//保存图片
+                    //大量训练
                     YoloV5Ncnn.Obj[] objects = yolov5ncnn.Detect(BitmaptrfficLight, false);
 
                     for(int i=0;i<objects.length;i++)
@@ -682,57 +691,90 @@ public class ConnectTransport {
                     break;
 
                 case 2://二维码识别
-                    if (QRReadNum<5){
-                        RightAutoFragment.QrFlag=true;
-                        RightAutoFragment.QRRecon();
-                        qr_result= RightAutoFragment.result_qr;
-                        QRReadNum++;
-                        if (qr_result!=null){
-                            QRReadNum=6;
-                        }
-                        task_handler.sendEmptyMessageDelayed(2, 500);//重新进入case2
+                    int qrnum=0;//用来存储二维码数量
+                    Bitmap QRpic;//用来识别前的图片
+                    Bitmap QRpic1,QRpic2,QRpic3,QRpic4;//用来存储裁切好的二维码图片
+                    if (LeftFragment.bitmap!=null){
+                        QRpic = LeftFragment.bitmap;
                     }
                     else{
-                        RightAutoFragment.QrFlag=false;
-                        if (qr_result!=null) {
-                            Log.d("qr", "二维码识别结果1"+qr_result);
-                            qr_result = qr_result.substring(1, qr_result.length() - 1);//数据处理，掐头去尾
-                            qr_result=qr_result.replace("0x","");//数据处理，去除0x
-                            //qr_result=qr_result.replace(",","");//数据处理，去除，
-                           // qr_result=qr_result.replace(",","");
-                            qr_resultByt=qr_result.getBytes();//字符串转字节
-                            qr_resultArr = qr_result.split(",");//字符串照转数组,通过，号分割
+                        QRpic= Yolov5Fragment.yourSelectedImage;
+                    }
 
-                            int[] num=new int[qr_resultArr.length];
-                            try {
-                                for (int i=0;i<qr_resultArr.length;i++)
-                                {
-                                    num[i] = algorithm.OxStringtoInt(qr_resultArr[i]);//将16进制字符串转为10进制的int
-                                    // qr_resultSho[i]=Short.valueOf(algorithm.OxStringtoInt(qr_resultArr[i])+"");//int转为short
-                                }
-                                qr_resultSho=new short[num.length];
-                                qr_resultSho=algorithm.shortint2hex(num);
-                                Log.d("auto", "shortnum1 = " + Short.valueOf(algorithm.OxStringtoInt(qr_resultArr[0])+""));
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                            Log.d("qr", "二维码识别结果"+qr_result);
+                    objects = yolov5ncnn.Detect(QRpic, false);
+                    for(int i=0;i<objects.length;i++)
+                    {
+                        Log.d("qr", "长度"+objects[i].label);
+                        if("QRCode".equals(objects[i].label))
+                        {
+                            retx=(int)objects[i].x;
+                            rety=(int)objects[i].y;
+                            w=(int)objects[i].w;
+                            h=(int)objects[i].h;
+                            qrnum++;
+                            Log.d("qr", "识别的二维码范围为x:"+retx+"y:"+rety+"w:"+w+"h:"+h);
+                        }
+                        switch (qrnum){
+                            case 1:
+                                QRpic1 = CarShape.opencvCutmap(QRpic,retx,rety,w,h);//对前一张图片进行裁切
+                                qr_result1=RightAutoFragment.QRReconBitmap(QRpic1);
+                                Log.d("qr", "二维码识别结果为"+qr_result1);
+                                break;
+                            case 2:
+                                QRpic2 = CarShape.opencvCutmap(QRpic,retx,rety,w,h);//对前一张图片进行裁切
+                                qr_result2=RightAutoFragment.QRReconBitmap(QRpic2);
+                                break;
+                            case 3:
+                                QRpic3 = CarShape.opencvCutmap(QRpic,retx,rety,w,h);//对前一张图片进行裁切
+                                qr_result3=RightAutoFragment.QRReconBitmap(QRpic3);
+                                break;
+                            case 4:
+                                QRpic4 = CarShape.opencvCutmap(QRpic,retx,rety,w,h);//对前一张图片进行裁切
+                                qr_result4=RightAutoFragment.QRReconBitmap(QRpic4);
+                                break;
+                        }
+                    }
+                    qrnum=0;
+//                    Log.d("yolov", "x:"+retx+"y:"+rety+"w:"+w+"h:"+h+"长度"+objects.length);
+//                    RightAutoFragment.image_show.setImageBitmap(bitmap_cut);//显示裁切后的图片
+
+//                    if (QRReadNum<5){
+//                        RightAutoFragment.QrFlag=true;
+//
+//                        qr_result= RightAutoFragment.result_qr;
+//                        QRReadNum++;
+//                        if (qr_result!=null){
+//                            QRReadNum=6;
+//                        }
+//                        task_handler.sendEmptyMessageDelayed(2, 500);//重新进入case2
+//                    }
+//                    else{
+//                        RightAutoFragment.QrFlag=false;
+                        if (qr_result1!=null) {//二维码识别的结果为字符串
+                            Log.d("qr", "二维码识别结果"+qr_result1);
+                            qr_resultArr=algorithm.S2Arr(qr_result1);//需要对字符串进行处理，得到字符串数组
+                            Log.d("qr", "qr字符串数组"+qr_resultArr);
+                            //此处，在比赛时候需要根据要求修改S2Arr里面的处理方法
+                            qr_resultSho=algorithm.Arr2Sho(qr_resultArr);//字符串数组转为short数组
+                            //字符串数组转化为short数组
+                            Log.d("qr", "qr_resultSho"+qr_resultSho);
+
                             TYPE=0xAA;
-                            MAJOR = 0x10;
+                            MAJOR = 0x10;//根据题目灵活更改
                             FIRST = qr_resultSho[0];//二维码读取到的数据，字符串转为了BYTE，此处将第一位发给小车
                             SECOND = qr_resultSho[1];
                             THRID = qr_resultSho[2];
                             send();
                             Log.d("qr", "前三位已发送");
                             yanchi(500);
-                            MAJOR = 0x11;
+                            MAJOR = 0x11;//根据题目灵活更改
                             FIRST = qr_resultSho[3];//二维码读取到的数据，字符串转为了BYTE，此处将第一位发给小车
                             SECOND =qr_resultSho[4];
                             THRID = qr_resultSho[5];
                             send();
                             Log.d("qr", "后三位已发送");
                         }
-                    }
+//                    }
 
                     //Sw_algorithm(2,result_qr);					// 二维码算法选择
                     //qr_result="{0x03,0x05,0x14,0x45,0xDE,0x92}";
@@ -770,6 +812,10 @@ public class ConnectTransport {
                                     Bitmap bitmap_cut = CarShape.opencvCutmap(SelectedImage,retx,rety,w,h);;//对前一张图片进行裁切
                                     Yolov5Fragment.iv2.setImageBitmap(bitmap_cut);//显示裁切后的图片
                                     //Log.d("auto time",(System.currentTimeMillis()-current)+"" );
+                                    //tesseract=new MainActivity();
+                                    //Log.d("yolov", "开始识别车牌");
+                                    //String plate=tesseract.doc(bitmap_cut,"eng");
+                                    //Log.d("yolov", "plate: "+plate);
                                     break;
 
                                 case "black_tri":     black_tri++;      break;
@@ -1076,7 +1122,7 @@ public class ConnectTransport {
 //                        }
 //                        shapeReadNum++;
 //                        tftDown();//先让小车发送下翻图片
-//                        task_handler.sendEmptyMessageDelayed(3, 2500);//重新进入case3
+//                        task_handler.sendEmptyMessageDelayed(31, 2500);//重新进入case3
 //                    }
 //                    else {//根据四个重要参数，对图片逐一识别
 //                        if(imgReadNum<7){
@@ -1285,6 +1331,50 @@ public class ConnectTransport {
                             send();
                         }
                     }
+
+                    break;
+
+                case 51://二维码识别
+                   if (QRReadNum<5){
+                        RightAutoFragment.QrFlag=true;
+                        RightAutoFragment.QRRecon();
+                        qr_result= RightAutoFragment.result_qr;
+                        QRReadNum++;
+                        if (qr_result!=null){
+                            QRReadNum=6;
+                        }
+                        task_handler.sendEmptyMessageDelayed(2, 500);//重新进入case2
+                    }
+                    else{
+                        RightAutoFragment.QrFlag=false;
+                        if (qr_result!=null) {//二维码识别的结果为字符串
+                            Log.d("qr", "二维码识别结果1"+qr_result);
+                            qr_resultArr=algorithm.S2Arr(qr_result);//需要对字符串进行处理，得到字符串数组
+                            Log.d("qr", "qr字符串数组"+qr_resultArr);
+                            //此处，在比赛时候需要根据要求修改S2Arr里面的处理方法
+                            qr_resultSho=algorithm.Arr2Sho(qr_resultArr);//字符串数组转为short数组
+                            //字符串数组转化为short数组
+                            Log.d("qr", "qr_resultSho"+qr_resultSho);
+
+                            TYPE=0xAA;
+                            MAJOR = 0x10;//根据题目灵活更改
+                            FIRST = qr_resultSho[0];//二维码读取到的数据，字符串转为了BYTE，此处将第一位发给小车
+                            SECOND = qr_resultSho[1];
+                            THRID = qr_resultSho[2];
+                            send();
+                            Log.d("qr", "前三位已发送");
+                            yanchi(500);
+                            MAJOR = 0x11;//根据题目灵活更改
+                            FIRST = qr_resultSho[3];//二维码读取到的数据，字符串转为了BYTE，此处将第一位发给小车
+                            SECOND =qr_resultSho[4];
+                            THRID = qr_resultSho[5];
+                            send();
+                            Log.d("qr", "后三位已发送");
+                        }
+                    }
+
+                    //Sw_algorithm(2,result_qr);					// 二维码算法选择
+                    //qr_result="{0x03,0x05,0x14,0x45,0xDE,0x92}";
 
                     break;
 

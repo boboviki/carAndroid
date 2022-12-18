@@ -1,19 +1,19 @@
 The target system is: Android - 1 - i686
 The host system is: Windows - 10.0.19041 - AMD64
 Determining if the C compiler works passed with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_90795"
-[1/2] Building C object CMakeFiles/cmTC_90795.dir/testCCompiler.c.o
-[2/2] Linking C executable cmTC_90795
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_52a64"
+[1/2] Building C object CMakeFiles/cmTC_52a64.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_52a64
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_6d871"
-[1/2] Building C object CMakeFiles/cmTC_6d871.dir/CMakeCCompilerABI.c.o
-[2/2] Linking C executable cmTC_6d871
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_e1ea4"
+[1/2] Building C object CMakeFiles/cmTC_e1ea4.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_e1ea4
 Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)
 Target: i686-none-linux-android24
 Thread model: posix
@@ -24,16 +24,16 @@ Selected GCC installation: D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
 Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0
- "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_6d871 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_6d871.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"
+ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_e1ea4 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_e1ea4.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(i686-linux-android-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_6d871"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_6d871.dir/CMakeCCompilerABI.c.o]
-  ignore line: [[2/2] Linking C executable cmTC_6d871]
+  ignore line: [Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_e1ea4"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_e1ea4.dir/CMakeCCompilerABI.c.o]
+  ignore line: [[2/2] Linking C executable cmTC_e1ea4]
   ignore line: [Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)]
   ignore line: [Target: i686-none-linux-android24]
   ignore line: [Thread model: posix]
@@ -46,7 +46,7 @@ Parsed C implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
   ignore line: [Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0]
-  link line: [ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_6d871 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_6d871.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"]
+  link line: [ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_e1ea4 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_e1ea4.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"]
     arg [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld] ==> ignore
     arg [--sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -62,7 +62,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_6d871] ==> ignore
+    arg [cmTC_e1ea4] ==> ignore
     arg [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o] ==> ignore
     arg [-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386] ==> dir [D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386]
     arg [-LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
@@ -80,7 +80,7 @@ Parsed C implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_6d871.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_e1ea4.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [-ldl] ==> lib [dl]
     arg [-lc] ==> lib [c]
@@ -101,11 +101,11 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_39b3b"
-[1/2] Building C object CMakeFiles/cmTC_39b3b.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_39b3b
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_90e84"
+[1/2] Building C object CMakeFiles/cmTC_90e84.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_90e84
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -115,11 +115,11 @@ Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe"
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_21737"
-[1/2] Building C object CMakeFiles/cmTC_21737.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_21737
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_e9736"
+[1/2] Building C object CMakeFiles/cmTC_e9736.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_e9736
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -129,11 +129,11 @@ Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe"
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_d2185"
-[1/2] Building C object CMakeFiles/cmTC_d2185.dir/feature_tests.c.o
-[2/2] Linking C executable cmTC_d2185
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_6ce05"
+[1/2] Building C object CMakeFiles/cmTC_6ce05.dir/feature_tests.c.o
+[2/2] Linking C executable cmTC_6ce05
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -141,19 +141,19 @@ Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe"
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_dbc2b"
-[1/2] Building CXX object CMakeFiles/cmTC_dbc2b.dir/testCXXCompiler.cxx.o
-[2/2] Linking CXX executable cmTC_dbc2b
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_777cd"
+[1/2] Building CXX object CMakeFiles/cmTC_777cd.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_777cd
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_c8bee"
-[1/2] Building CXX object CMakeFiles/cmTC_c8bee.dir/CMakeCXXCompilerABI.cpp.o
-[2/2] Linking CXX executable cmTC_c8bee
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_63fe2"
+[1/2] Building CXX object CMakeFiles/cmTC_63fe2.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_63fe2
 Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)
 Target: i686-none-linux-android24
 Thread model: posix
@@ -164,16 +164,16 @@ Selected GCC installation: D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
 Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0
- "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_c8bee "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_c8bee.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"
+ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_63fe2 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_63fe2.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(i686-linux-android-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_c8bee"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_c8bee.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [[2/2] Linking CXX executable cmTC_c8bee]
+  ignore line: [Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_63fe2"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_63fe2.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [[2/2] Linking CXX executable cmTC_63fe2]
   ignore line: [Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)]
   ignore line: [Target: i686-none-linux-android24]
   ignore line: [Thread model: posix]
@@ -186,7 +186,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
   ignore line: [Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0]
-  link line: [ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_c8bee "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_c8bee.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"]
+  link line: [ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_63fe2 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_63fe2.dir/CMakeCXXCompilerABI.cpp.o -Bstatic -lc++ -Bdynamic -lm -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"]
     arg [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld] ==> ignore
     arg [--sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -202,7 +202,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_c8bee] ==> ignore
+    arg [cmTC_63fe2] ==> ignore
     arg [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o] ==> ignore
     arg [-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386] ==> dir [D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386]
     arg [-LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
@@ -220,7 +220,7 @@ Parsed CXX implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_c8bee.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_63fe2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-Bstatic] ==> ignore
     arg [-lc++] ==> lib [c++]
     arg [-Bdynamic] ==> ignore
@@ -245,11 +245,11 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_85d4d"
-[1/2] Building CXX object CMakeFiles/cmTC_85d4d.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_85d4d
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_39723"
+[1/2] Building CXX object CMakeFiles/cmTC_39723.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_39723
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -312,11 +312,11 @@ Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe"
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_0ad76"
-[1/2] Building CXX object CMakeFiles/cmTC_0ad76.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_0ad76
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_3e6d9"
+[1/2] Building CXX object CMakeFiles/cmTC_3e6d9.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_3e6d9
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -379,11 +379,11 @@ Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe"
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_7a928"
-[1/2] Building CXX object CMakeFiles/cmTC_7a928.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_7a928
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_b5ca1"
+[1/2] Building CXX object CMakeFiles/cmTC_b5ca1.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_b5ca1
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -446,11 +446,11 @@ Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe"
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_2038d"
-[1/2] Building CXX object CMakeFiles/cmTC_2038d.dir/feature_tests.cxx.o
-[2/2] Linking CXX executable cmTC_2038d
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_4cd7c"
+[1/2] Building CXX object CMakeFiles/cmTC_4cd7c.dir/feature_tests.cxx.o
+[2/2] Linking CXX executable cmTC_4cd7c
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -511,10 +511,10 @@ Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe"
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
 Detecting C OpenMP compiler ABI info compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_7f212"
-[1/2] Building C object CMakeFiles/cmTC_7f212.dir/OpenMPTryFlag.c.o
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_8ed96"
+[1/2] Building C object CMakeFiles/cmTC_8ed96.dir/OpenMPTryFlag.c.o
 Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)
 Target: i686-none-linux-android24
 Thread model: posix
@@ -525,7 +525,7 @@ Selected GCC installation: D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
 Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0
- "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe" -cc1 -triple i686-none-linux-android24 -emit-obj -mrelax-all -mnoexecstack -disable-free -disable-llvm-verifier -discard-value-names -main-file-name OpenMPTryFlag.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu i686 -target-feature +ssse3 -dwarf-column-info -debug-info-kind=limited -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -coverage-notes-file "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp\\CMakeFiles/cmTC_7f212.dir/OpenMPTryFlag.c.gcno" -resource-dir "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9" -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-isystem "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\include" -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -Werror=format-security -fdebug-compilation-dir "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fopenmp -stack-protector 2 -fobjc-runtime=gcc -fdiagnostics-show-option -o CMakeFiles/cmTC_7f212.dir/OpenMPTryFlag.c.o -x c D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/FindOpenMP/OpenMPTryFlag.c
+ "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe" -cc1 -triple i686-none-linux-android24 -emit-obj -mrelax-all -mnoexecstack -disable-free -disable-llvm-verifier -discard-value-names -main-file-name OpenMPTryFlag.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu i686 -target-feature +ssse3 -dwarf-column-info -debug-info-kind=limited -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -coverage-notes-file "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp\\CMakeFiles/cmTC_8ed96.dir/OpenMPTryFlag.c.gcno" -resource-dir "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9" -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-isystem "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\include" -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -Werror=format-security -fdebug-compilation-dir "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fopenmp -stack-protector 2 -fobjc-runtime=gcc -fdiagnostics-show-option -o CMakeFiles/cmTC_8ed96.dir/OpenMPTryFlag.c.o -x c D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/FindOpenMP/OpenMPTryFlag.c
 clang -cc1 version 9.0.9 based upon LLVM 9.0.9svn default target x86_64-w64-windows-gnu
 ignoring nonexistent directory "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include"
 #include "..." search starts here:
@@ -535,7 +535,7 @@ ignoring nonexistent directory "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolc
  D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android
  D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include
 End of search list.
-[2/2] Linking C executable cmTC_7f212
+[2/2] Linking C executable cmTC_8ed96
 Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)
 Target: i686-none-linux-android24
 Thread model: posix
@@ -546,15 +546,15 @@ Selected GCC installation: D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
 Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0
- "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_7f212 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_7f212.dir/OpenMPTryFlag.c.o -latomic -lm -lomp -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"
+ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_8ed96 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_8ed96.dir/OpenMPTryFlag.c.o -latomic -lm -lomp -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"
 
 
 Parsed C OpenMP implicit link information from above output:
   link line regex: [^( *|.*[/\])(i686-linux-android-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_7f212"]
-  ignore line: [[1/2] Building C object CMakeFiles/cmTC_7f212.dir/OpenMPTryFlag.c.o]
+  ignore line: [Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_8ed96"]
+  ignore line: [[1/2] Building C object CMakeFiles/cmTC_8ed96.dir/OpenMPTryFlag.c.o]
   ignore line: [Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)]
   ignore line: [Target: i686-none-linux-android24]
   ignore line: [Thread model: posix]
@@ -567,7 +567,7 @@ Parsed C OpenMP implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
   ignore line: [Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0]
-  ignore line: [ "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe" -cc1 -triple i686-none-linux-android24 -emit-obj -mrelax-all -mnoexecstack -disable-free -disable-llvm-verifier -discard-value-names -main-file-name OpenMPTryFlag.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu i686 -target-feature +ssse3 -dwarf-column-info -debug-info-kind=limited -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -coverage-notes-file "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp\\CMakeFiles/cmTC_7f212.dir/OpenMPTryFlag.c.gcno" -resource-dir "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9" -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-isystem "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\include" -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -Werror=format-security -fdebug-compilation-dir "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fopenmp -stack-protector 2 -fobjc-runtime=gcc -fdiagnostics-show-option -o CMakeFiles/cmTC_7f212.dir/OpenMPTryFlag.c.o -x c D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/FindOpenMP/OpenMPTryFlag.c]
+  ignore line: [ "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe" -cc1 -triple i686-none-linux-android24 -emit-obj -mrelax-all -mnoexecstack -disable-free -disable-llvm-verifier -discard-value-names -main-file-name OpenMPTryFlag.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu i686 -target-feature +ssse3 -dwarf-column-info -debug-info-kind=limited -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -coverage-notes-file "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp\\CMakeFiles/cmTC_8ed96.dir/OpenMPTryFlag.c.gcno" -resource-dir "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9" -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-isystem "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\include" -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -Werror=format-security -fdebug-compilation-dir "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fopenmp -stack-protector 2 -fobjc-runtime=gcc -fdiagnostics-show-option -o CMakeFiles/cmTC_8ed96.dir/OpenMPTryFlag.c.o -x c D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/FindOpenMP/OpenMPTryFlag.c]
   ignore line: [clang -cc1 version 9.0.9 based upon LLVM 9.0.9svn default target x86_64-w64-windows-gnu]
   ignore line: [ignoring nonexistent directory "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include"]
   ignore line: [#include "..." search starts here:]
@@ -577,7 +577,7 @@ Parsed C OpenMP implicit link information from above output:
   ignore line: [ D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android]
   ignore line: [ D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
   ignore line: [End of search list.]
-  ignore line: [[2/2] Linking C executable cmTC_7f212]
+  ignore line: [[2/2] Linking C executable cmTC_8ed96]
   ignore line: [Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)]
   ignore line: [Target: i686-none-linux-android24]
   ignore line: [Thread model: posix]
@@ -590,7 +590,7 @@ Parsed C OpenMP implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
   ignore line: [Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0]
-  link line: [ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_7f212 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_7f212.dir/OpenMPTryFlag.c.o -latomic -lm -lomp -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"]
+  link line: [ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_8ed96 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_8ed96.dir/OpenMPTryFlag.c.o -latomic -lm -lomp -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"]
     arg [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld] ==> ignore
     arg [--sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -606,7 +606,7 @@ Parsed C OpenMP implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_7f212] ==> ignore
+    arg [cmTC_8ed96] ==> ignore
     arg [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o] ==> ignore
     arg [-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386] ==> dir [D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386]
     arg [-LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
@@ -624,7 +624,7 @@ Parsed C OpenMP implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_7f212.dir/OpenMPTryFlag.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_8ed96.dir/OpenMPTryFlag.c.o] ==> ignore
     arg [-latomic] ==> lib [atomic]
     arg [-lm] ==> lib [m]
     arg [-lomp] ==> lib [omp]
@@ -646,10 +646,10 @@ Parsed C OpenMP implicit link information from above output:
 
 
 Detecting CXX OpenMP compiler ABI info compiled with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_f58d3"
-[1/2] Building CXX object CMakeFiles/cmTC_f58d3.dir/OpenMPTryFlag.cpp.o
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_fc67b"
+[1/2] Building CXX object CMakeFiles/cmTC_fc67b.dir/OpenMPTryFlag.cpp.o
 Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)
 Target: i686-none-linux-android24
 Thread model: posix
@@ -660,7 +660,7 @@ Selected GCC installation: D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
 Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0
- "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe" -cc1 -triple i686-none-linux-android24 -emit-obj -mrelax-all -mnoexecstack -disable-free -disable-llvm-verifier -discard-value-names -main-file-name OpenMPTryFlag.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu i686 -target-feature +ssse3 -dwarf-column-info -debug-info-kind=limited -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -coverage-notes-file "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp\\CMakeFiles/cmTC_f58d3.dir/OpenMPTryFlag.cpp.gcno" -resource-dir "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9" -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1 -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-isystem "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\include" -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -Werror=format-security -fdeprecated-macro -fdebug-compilation-dir "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fopenmp -stack-protector 2 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -o CMakeFiles/cmTC_f58d3.dir/OpenMPTryFlag.cpp.o -x c++ D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+ "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe" -cc1 -triple i686-none-linux-android24 -emit-obj -mrelax-all -mnoexecstack -disable-free -disable-llvm-verifier -discard-value-names -main-file-name OpenMPTryFlag.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu i686 -target-feature +ssse3 -dwarf-column-info -debug-info-kind=limited -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -coverage-notes-file "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp\\CMakeFiles/cmTC_fc67b.dir/OpenMPTryFlag.cpp.gcno" -resource-dir "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9" -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1 -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-isystem "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\include" -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -Werror=format-security -fdeprecated-macro -fdebug-compilation-dir "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fopenmp -stack-protector 2 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -o CMakeFiles/cmTC_fc67b.dir/OpenMPTryFlag.cpp.o -x c++ D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
 clang -cc1 version 9.0.9 based upon LLVM 9.0.9svn default target x86_64-w64-windows-gnu
 ignoring nonexistent directory "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include"
 #include "..." search starts here:
@@ -671,7 +671,7 @@ ignoring nonexistent directory "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolc
  D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android
  D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include
 End of search list.
-[2/2] Linking CXX executable cmTC_f58d3
+[2/2] Linking CXX executable cmTC_fc67b
 Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)
 Target: i686-none-linux-android24
 Thread model: posix
@@ -682,15 +682,15 @@ Selected GCC installation: D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains
 Candidate multilib: .;@m32
 Selected multilib: .;@m32
 Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0
- "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_f58d3 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_f58d3.dir/OpenMPTryFlag.cpp.o -latomic -lm -Bstatic -lc++ -Bdynamic -lm -lomp -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"
+ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_fc67b "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_fc67b.dir/OpenMPTryFlag.cpp.o -latomic -lm -Bstatic -lc++ -Bdynamic -lm -lomp -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"
 
 
 Parsed CXX OpenMP implicit link information from above output:
   link line regex: [^( *|.*[/\])(i686-linux-android-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_f58d3"]
-  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_f58d3.dir/OpenMPTryFlag.cpp.o]
+  ignore line: [Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_fc67b"]
+  ignore line: [[1/2] Building CXX object CMakeFiles/cmTC_fc67b.dir/OpenMPTryFlag.cpp.o]
   ignore line: [Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)]
   ignore line: [Target: i686-none-linux-android24]
   ignore line: [Thread model: posix]
@@ -703,7 +703,7 @@ Parsed CXX OpenMP implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
   ignore line: [Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0]
-  ignore line: [ "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe" -cc1 -triple i686-none-linux-android24 -emit-obj -mrelax-all -mnoexecstack -disable-free -disable-llvm-verifier -discard-value-names -main-file-name OpenMPTryFlag.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu i686 -target-feature +ssse3 -dwarf-column-info -debug-info-kind=limited -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -coverage-notes-file "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp\\CMakeFiles/cmTC_f58d3.dir/OpenMPTryFlag.cpp.gcno" -resource-dir "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9" -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1 -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-isystem "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\include" -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -Werror=format-security -fdeprecated-macro -fdebug-compilation-dir "D:\\00ProjectGit\\carAndroid-1210\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fopenmp -stack-protector 2 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -o CMakeFiles/cmTC_f58d3.dir/OpenMPTryFlag.cpp.o -x c++ D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp]
+  ignore line: [ "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe" -cc1 -triple i686-none-linux-android24 -emit-obj -mrelax-all -mnoexecstack -disable-free -disable-llvm-verifier -discard-value-names -main-file-name OpenMPTryFlag.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mthread-model posix -mdisable-fp-elim -masm-verbose -mconstructor-aliases -munwind-tables -fuse-init-array -target-cpu i686 -target-feature +ssse3 -dwarf-column-info -debug-info-kind=limited -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -coverage-notes-file "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp\\CMakeFiles/cmTC_fc67b.dir/OpenMPTryFlag.cpp.gcno" -resource-dir "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9" -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1 -internal-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-isystem "D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\include" -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -Werror=format-security -fdeprecated-macro -fdebug-compilation-dir "D:\\00ProjectGit\\carAndroid\\yolov5\\.cxx\\cmake\\release\\x86\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fopenmp -stack-protector 2 -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fdiagnostics-show-option -o CMakeFiles/cmTC_fc67b.dir/OpenMPTryFlag.cpp.o -x c++ D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp]
   ignore line: [clang -cc1 version 9.0.9 based upon LLVM 9.0.9svn default target x86_64-w64-windows-gnu]
   ignore line: [ignoring nonexistent directory "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include"]
   ignore line: [#include "..." search starts here:]
@@ -714,7 +714,7 @@ Parsed CXX OpenMP implicit link information from above output:
   ignore line: [ D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/i686-linux-android]
   ignore line: [ D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
   ignore line: [End of search list.]
-  ignore line: [[2/2] Linking CXX executable cmTC_f58d3]
+  ignore line: [[2/2] Linking CXX executable cmTC_fc67b]
   ignore line: [Android (7019983 based on r365631c3) clang version 9.0.9 (https://android.googlesource.com/toolchain/llvm-project a2a1e703c0edb03ba29944e529ccbf457742737b) (based on LLVM 9.0.9svn)]
   ignore line: [Target: i686-none-linux-android24]
   ignore line: [Thread model: posix]
@@ -727,7 +727,7 @@ Parsed CXX OpenMP implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m32]
   ignore line: [Found CUDA installation: C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6, version 7.0]
-  link line: [ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_f58d3 "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_f58d3.dir/OpenMPTryFlag.cpp.o -latomic -lm -Bstatic -lc++ -Bdynamic -lm -lomp -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"]
+  link line: [ "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld" --sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot -pie -z noexecstack --warn-shared-textrel -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m elf_i386 -dynamic-linker /system/bin/linker -o cmTC_fc67b "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o" "-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386" -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24 -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/lib -LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libgcc_real.a --exclude-libs libatomic.a --build-id --fatal-warnings --no-undefined --gc-sections CMakeFiles/cmTC_fc67b.dir/OpenMPTryFlag.cpp.o -latomic -lm -Bstatic -lc++ -Bdynamic -lm -lomp -lgcc -ldl -lc -lgcc -ldl "D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtend_android.o"]
     arg [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x/../../../../i686-linux-android/bin\\ld] ==> ignore
     arg [--sysroot=D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot] ==> ignore
     arg [-pie] ==> ignore
@@ -743,7 +743,7 @@ Parsed CXX OpenMP implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/system/bin/linker] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_f58d3] ==> ignore
+    arg [cmTC_fc67b] ==> ignore
     arg [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/i686-linux-android/24\\crtbegin_dynamic.o] ==> ignore
     arg [-LD:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386] ==> dir [D:\\adt-bundle-windows\\sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\lib64\\clang\\9.0.9\\lib\\linux\\i386]
     arg [-LD:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x] ==> dir [D:/adt-bundle-windows/sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/lib/gcc/i686-linux-android/4.9.x]
@@ -761,7 +761,7 @@ Parsed CXX OpenMP implicit link information from above output:
     arg [--fatal-warnings] ==> ignore
     arg [--no-undefined] ==> ignore
     arg [--gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_f58d3.dir/OpenMPTryFlag.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_fc67b.dir/OpenMPTryFlag.cpp.o] ==> ignore
     arg [-latomic] ==> lib [atomic]
     arg [-lm] ==> lib [m]
     arg [-Bstatic] ==> ignore
@@ -787,21 +787,21 @@ Parsed CXX OpenMP implicit link information from above output:
 
 
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_792d8"
-[1/2] Building C object CMakeFiles/cmTC_792d8.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_792d8
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_e679d"
+[1/2] Building C object CMakeFiles/cmTC_e679d.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_e679d
 
 
 Determining if the pthread_create exist passed with the following output:
-Change Dir: D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
+Change Dir: D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp
 
-Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_ef654"
-[1/2] Building C object CMakeFiles/cmTC_ef654.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_ef654
+Run Build Command:"D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe" "cmTC_c6425"
+[1/2] Building C object CMakeFiles/cmTC_c6425.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_c6425
 
-File D:/00ProjectGit/carAndroid-1210/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File D:/00ProjectGit/carAndroid/yolov5/.cxx/cmake/release/x86/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 

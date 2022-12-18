@@ -1,1 +1,1 @@
-D:\00ProjectGit\carAndroid-1210\yolov5\build\intermediates\cmake\debug\obj\x86_64
+D:\00ProjectGit\carAndroid\yolov5\build\intermediates\cmake\debug\obj\x86_64

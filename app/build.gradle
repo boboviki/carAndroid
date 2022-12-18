@@ -58,6 +58,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation project(path: ':yolov5')
+    implementation project(path: ':tesseract')
     testImplementation 'junit:junit:4.12'
     implementation project(':library')
     implementation(name:'usbSerialForAndroid-debug', ext:'aar')

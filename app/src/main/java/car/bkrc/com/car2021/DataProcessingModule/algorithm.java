@@ -496,9 +496,47 @@ public class algorithm {
 
         }
 
+    /**********************************************************************************
+     * 							QR识别结果处理
+     * *******************************************************************************/
+    //字符串通过处理转化为字符串的数组
+    public static String[] S2Arr(String result){
+        //byte[] resultByt;
+        String[] resultArr;
+
+        result = result.substring(1, result.length() - 1);//数据处理，掐头去尾
+        result = result.replace("0x","");//数据处理，去除0x
+        //qr_result=qr_result.replace(",","");//数据处理，去除，
+        // qr_result=qr_result.replace(",","");
+        //resultByt=result.getBytes();//字符串转字节
+        resultArr = result.split(",");//字符串转数组,通过，号分割
+
+        return  resultArr;
+        }
         /**********************************************************************************
          * 							数据处理
          * *******************************************************************************/
+
+        // 字符串数组转化为字节数组
+     public static short[] Arr2Sho(String[] result){
+            short[]  Sho=null;
+            int[] num=new int[result.length];
+            try {
+                for (int i=0;i<result.length;i++)
+                {
+                    num[i] = algorithm.OxStringtoInt(result[i]);//将16进制字符串转为10进制的int
+                    // qr_resultSho[i]=Short.valueOf(algorithm.OxStringtoInt(qr_resultArr[i])+"");//int转为short
+                }
+                Sho=new short[num.length];
+                Sho=algorithm.shortint2hex(num);
+               // Log.d("auto", "shortnum1 = " + Short.valueOf(algorithm.OxStringtoInt(resultArr[0])+""));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            //Log.d("qr", "二维码识别结果"+result);
+            return Sho;
+        }
+
         // 二进制转十六进制
         public String BToH(char a)
         {

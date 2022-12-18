@@ -59,6 +59,7 @@ public class CarShape {
             {140,43,46,155,255,255},//紫色6
     };
 
+
     public void colorAndShape(Bitmap bitmap){
         int i=3;    int j=3;  int aremin=280;  int aremax=3000; double esp=0.030;//运算核默认3*3，可修改
         Log.d("auto","进入colorandshape函数");

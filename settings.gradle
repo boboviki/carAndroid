@@ -2,3 +2,4 @@ include ':app',':library'
 include ':openCVLibrary343'
 
 include ':yolov5'
+include ':tesseract'

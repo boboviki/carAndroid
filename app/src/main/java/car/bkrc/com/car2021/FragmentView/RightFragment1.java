@@ -116,9 +116,9 @@ public class RightFragment1 extends Fragment {
                                 mByte[2] = 0x00;//归0
                                 if (mByte[7] == (byte) 0xbb) {
                                     if (Rgb_flag == 0) {
-                                        Message message = new Message();
-                                        message.what = 6;
-                                        Connect_Transport.cameraSet.sendMessage(message);
+//                                        Message message = new Message();
+//                                        message.what = 6;
+//                                        Connect_Transport.cameraSet.sendMessage(message);
                                         Connect_Transport.mark = 1;//红绿灯
                                         Connect_Transport.autoDrive();
                                         Rgb_flag = 1;

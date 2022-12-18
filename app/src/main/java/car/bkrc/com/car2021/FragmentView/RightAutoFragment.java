@@ -78,6 +78,7 @@ import car.bkrc.com.car2021.Utils.CarPlate.PlateDetector;
 import car.bkrc.com.car2021.Utils.CarShape.CarShape;
 import car.bkrc.com.car2021.Utils.TrafficRecUtil.ColorRecognition;
 import car.bkrc.com.car2021.DataProcessingModule.ConnectTransport;
+import car.bkrc.com.car2021.yolov5ncnn.Yolov5Fragment;
 
 import static android.graphics.Bitmap.Config.ARGB_8888;
 import static car.bkrc.com.car2021.ActivityView.FirstActivity.Connect_Transport;
@@ -763,10 +764,61 @@ public class RightAutoFragment extends Fragment  {
 //            }
 //        }
 //    };
+    private static String QRresult;
+    public static String QRReconBitmap(Bitmap QRpic){
+            if (QRpic != null){
+                new Thread(() -> {
+                    Result result;
+                    QR_Recognition rSource = new QR_Recognition(
+                            bitmap2Gray(QRpic));
+                    try {
+                        BinaryBitmap binaryBitmap = new BinaryBitmap(
+                                new HybridBinarizer(rSource));
+                        Map<DecodeHintType, String> hint = new HashMap<DecodeHintType, String>();
+                        hint.put(DecodeHintType.CHARACTER_SET, "utf-8");
+                        QRCodeReader reader = new QRCodeReader();
+                        result = reader.decode(binaryBitmap, hint);
+                        if (result.toString() != null) {
+                            QRresult = result.toString();
+                            Log.d("qr", "二维码识别结果1为"+QRresult);
+//                            qrHandler.sendEmptyMessage(20);
+                        }
+                        System.out.println("正在识别");
+                    } catch (NotFoundException e) {
+                        e.printStackTrace();
+//                        qrHandler.sendEmptyMessage(30);
+                    } catch (ChecksumException e) {
+                        e.printStackTrace();
+                    } catch (FormatException e) {
+                        e.printStackTrace();
+                    }
+                }).start();
+            }
+        Log.d("qr", "二维码识别结果2为"+QRresult);
+            int i=0;
+        while(QRresult==null)
+        {
+            if(i<20){
+                yanchi(100);
+            }
+            else {
+                break;
+            }
+        }
+        return QRresult;
+    }
+
+
 
     public void QRRecon(){
         if (QrFlag==true)  {
-            qrBitmap = LeftFragment.bitmap;
+
+            if (LeftFragment.bitmap!=null){
+                qrBitmap = LeftFragment.bitmap;
+            }
+            else{
+                qrBitmap= Yolov5Fragment.yourSelectedImage;
+            }
 //            if (qrBitmap==null)
 //            {
 //                qrBitmap= BitmapFactory.decodeResource(getResources(), R.drawable.erweima);
@@ -807,7 +859,7 @@ public class RightAutoFragment extends Fragment  {
      * @param bmSrc
      * @return
      */
-    public Bitmap bitmap2Gray(Bitmap bmSrc) {
+    public static Bitmap bitmap2Gray(Bitmap bmSrc) {
         // 得到图片的长和宽
         if (bmSrc == null)
             return null;
@@ -1182,7 +1234,7 @@ public class RightAutoFragment extends Fragment  {
 
 
     // 沉睡
-    public void yanchi(int time) {
+    public static void yanchi(int time) {
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {

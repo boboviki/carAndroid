@@ -1,7 +1,7 @@
                     Executable : D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\cmake.exe
 arguments : 
--HD:\00ProjectGit\carAndroid-1210\yolov5\src\main\jni
--DCMAKE_FIND_ROOT_PATH=D:\00ProjectGit\carAndroid-1210\yolov5\.cxx\cmake\debug\prefab\arm64-v8a\prefab
+-HD:\00ProjectGit\carAndroid\yolov5\src\main\jni
+-DCMAKE_FIND_ROOT_PATH=D:\00ProjectGit\carAndroid\yolov5\.cxx\cmake\debug\prefab\arm64-v8a\prefab
 -DCMAKE_BUILD_TYPE=Debug
 -DCMAKE_TOOLCHAIN_FILE=D:\adt-bundle-windows\sdk\ndk\21.4.7075529\build\cmake\android.toolchain.cmake
 -DANDROID_ABI=arm64-v8a
@@ -10,12 +10,12 @@ arguments :
 -DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
 -DCMAKE_ANDROID_NDK=D:\adt-bundle-windows\sdk\ndk\21.4.7075529
 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\00ProjectGit\carAndroid-1210\yolov5\build\intermediates\cmake\debug\obj\arm64-v8a
--DCMAKE_RUNTIME_OUTPUT_DIRECTORY=D:\00ProjectGit\carAndroid-1210\yolov5\build\intermediates\cmake\debug\obj\arm64-v8a
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\00ProjectGit\carAndroid\yolov5\build\intermediates\cmake\debug\obj\arm64-v8a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=D:\00ProjectGit\carAndroid\yolov5\build\intermediates\cmake\debug\obj\arm64-v8a
 -DCMAKE_MAKE_PROGRAM=D:\adt-bundle-windows\sdk\cmake\3.10.2.4988404\bin\ninja.exe
 -DCMAKE_SYSTEM_NAME=Android
 -DCMAKE_SYSTEM_VERSION=24
--BD:\00ProjectGit\carAndroid-1210\yolov5\.cxx\cmake\debug\arm64-v8a
+-BD:\00ProjectGit\carAndroid\yolov5\.cxx\cmake\debug\arm64-v8a
 -GNinja
 jvmArgs : 
 

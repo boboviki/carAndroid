@@ -1,3 +1,15 @@
 # ninja log v5
-1	543	692693625	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	4538da3e45f643aa
-543	1026	692693626	D:/00ProjectGit/carAndroid-1210/yolov5/build/intermediates/cmake/debug/obj/x86_64/libyolov5ncnn.so	9e7f16f5e84a7cb9
+0	421	693036559	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	f699c5e0a6d5a864
+422	777	693036560	D:/00ProjectGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/x86_64/libyolov5ncnn.so	fb5a49849a2a8c42
+0	9	0	clean	45fa72c0009f71f1
+1	41	0	clean	45fa72c0009f71f1
+1	421	693042912	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	f699c5e0a6d5a864
+421	781	693042912	D:/00ProjectGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/x86_64/libyolov5ncnn.so	fb5a49849a2a8c42
+0	11	0	clean	45fa72c0009f71f1
+0	23	0	clean	45fa72c0009f71f1
+1	426	693042989	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	f699c5e0a6d5a864
+426	755	693042989	D:/00ProjectGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/x86_64/libyolov5ncnn.so	fb5a49849a2a8c42
+0	25	0	clean	45fa72c0009f71f1
+0	29	0	clean	45fa72c0009f71f1
+1	425	693043054	CMakeFiles/yolov5ncnn.dir/yolov5ncnn_jni.cpp.o	f699c5e0a6d5a864
+425	753	693043054	D:/00ProjectGit/carAndroid/yolov5/build/intermediates/cmake/debug/obj/x86_64/libyolov5ncnn.so	fb5a49849a2a8c42
