@@ -410,7 +410,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_tencent_yolov5ncnn_YoloV5Ncnn_Detect(JNI
     // yolov5
     std::vector<Object> objects;
     {
-        const float prob_threshold = 0.75f;//原来是0.25
+        const float prob_threshold = 0.25f;//原来是0.25
         const float nms_threshold = 0.45f;
 
         const float norm_vals[3] = {1 / 255.f, 1 / 255.f, 1 / 255.f};

@@ -808,7 +808,7 @@ public class ConnectTransport {
                         shapeReadNum++;
                         for(int i=0;i<objects.length;i++)
                         {
-                            Log.d("yolov", "标签："+objects[i].label);
+                            Log.d("yolov", "标签为："+objects[i].label);
                             switch (objects[i].label){
                                 /*车牌识别结果处理
                                  *适合未知车牌图形库，经过训练可较为准确提取处车牌位置
@@ -970,6 +970,7 @@ public class ConnectTransport {
                         }
                         tftDown();//先让小车发送下翻图片
                         Log.d("yolov5", "三角形: "+tri+"矩形: "+rect+"菱形: "+rhomb+"五角星: "+star+"圆形: "+circle);
+                        Log.d("yolov5", "车牌1为: "+PlateNum1+"车牌2为: "+PlateNum2);
                         task_handler.sendEmptyMessageDelayed(3, 2500);//重新进入case3
                     }//图片数据已读完
                     //识别的数据处理，如过有需要在这里处理的话
