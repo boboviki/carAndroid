@@ -46,8 +46,8 @@ public class CarShape {
     private static int yellow_tri, yellow_rect,yellow_rhomb,yellow_star,yellow_cir;
     private static int purple_tri, purple_rect,purple_rhomb,purple_star,purple_cir;
     public static int shapeResultNum=0;
-    public static int triResultnum,rectResultnum,circleResultnum,starResultnum,rhombResultnum;
-    public static int black_num,white_num, red_num, green_num,blue_num,yellow_num,purple_num;
+    public static int triResultnum,rectResultnum,circleResultnum,starResultnum,rhombResultnum,squareResultnum;
+    public static int black_num,white_num, red_num, green_num,blue_num,yellow_num,purple_num,cyan_num;
 
     private static int[][] HSV_Color_cloudy = {//阴天荧光灯下
             {0,0,0,180,255,95},//黑色0

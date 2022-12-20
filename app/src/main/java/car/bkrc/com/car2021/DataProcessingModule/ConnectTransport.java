@@ -130,26 +130,32 @@ public class ConnectTransport {
     private int h=0;
     private YoloV5Ncnn yolov5ncnn = new YoloV5Ncnn();
     private static int picShapeNum;
-    private static int blacknum,whitenum,rednum,greennum,bluenum,yellownum,purplenum;
-    private static int tri,rect,circle,star,rhomb;
-    private static int black_tri, black_rect,black_rhomb,black_star,black_cir;
-    private static int white_tri, white_rect,white_rhomb,white_star,white_cir;
-    private static int red_tri, red_rect,red_rhomb,red_star,red_cir;
-    private static int green_tri, green_rect,green_rhomb,green_star,green_cir;
-    private static int blue_tri, blue_rect,blue_rhomb,blue_star,blue_cir;
-    private static int yellow_tri, yellow_rect,yellow_rhomb,yellow_star,yellow_cir;
-    private static int purple_tri, purple_rect,purple_rhomb,purple_star,purple_cir;
+    private static int blacknum,whitenum,rednum,greennum,bluenum,yellownum,purplenum,cyannum;
+    private static int tri,rect,square,circle,star,rhomb;
+    private static int black_tri, black_rect,black_cir,black_square,black_rhomb,black_star;
+    private static int white_tri, white_rect,white_square,white_rhomb,white_star,white_cir;
+    private static int red_tri, red_rect,red_square,red_rhomb,red_star,red_cir;
+    private static int green_tri, green_rect,green_square,green_rhomb,green_star,green_cir;
+    private static int blue_tri, blue_rect,blue_square,blue_rhomb,blue_star,blue_cir;
+    private static int yellow_tri, yellow_rect,yellow_square,yellow_rhomb,yellow_star,yellow_cir;
+    private static int purple_tri, purple_rect,purple_square,purple_rhomb,purple_star,purple_cir;
+    private static int cyan_tri, cyan_rect,cyan_square,cyan_rhomb,cyan_star,cyan_cir;
+
+    private static String PlateNum1=null;//车牌识别结果1
+    private static String PlateNum2=null;//车牌识别结果2
+
 
     private void shapeZero(){
-        picShapeNum=blacknum=whitenum=rednum=greennum=bluenum=yellownum=purplenum=0;
-        tri=rect=circle=star=rhomb=0;
-        black_tri=black_rect=black_rhomb=black_star=black_cir=0;
-        white_tri= white_rect=white_rhomb=white_star=white_cir=0;
-        red_tri= red_rect=red_rhomb=red_star=red_cir=0;
-        green_tri= green_rect=green_rhomb=green_star=green_cir=0;
-        blue_tri= blue_rect=blue_rhomb=blue_star=blue_cir=0;
-        yellow_tri=yellow_rect=yellow_rhomb=yellow_star=yellow_cir=0;
-        purple_tri= purple_rect=purple_rhomb=purple_star=purple_cir=0;
+        picShapeNum=blacknum=whitenum=rednum=greennum=bluenum=yellownum=purplenum=cyannum=0;
+        tri=rect=square=circle=star=rhomb=0;
+        black_tri=black_rect=black_square=black_rhomb=black_star=black_cir=0;
+        white_tri= white_rect=white_square=white_rhomb=white_star=white_cir=0;
+        red_tri= red_rect=red_square=red_rhomb=red_star=red_cir=0;
+        green_tri= green_rect=green_square=green_rhomb=green_star=green_cir=0;
+        blue_tri= blue_rect=blue_square=blue_rhomb=blue_star=blue_cir=0;
+        yellow_tri=yellow_rect=yellow_square=yellow_rhomb=yellow_star=yellow_cir=0;
+        purple_tri= purple_rect=purple_square=purple_rhomb=purple_star=purple_cir=0;
+        cyan_tri=cyan_rect=cyan_square=cyan_rhomb=cyan_star=cyan_cir=0;
     }
 
     public void destory() {
@@ -497,11 +503,11 @@ public class ConnectTransport {
     public static byte[] qr_resultByt;
     public static String[] qr_resultArr;
     public static String rec_result = "red";
-    public static String qr_result = "识别中……";
-    public static String qr_result1 = "二维码1识别中……";
-    public static String qr_result2 = "二维码2识别中……";
-    public static String qr_result3 = "二维码3识别中……";
-    public static String qr_result4 = "二维码4识别中……";
+    public static String qr_result = null;
+    public static String qr_result1 = null;
+    public static String qr_result2 = null;
+    public static String qr_result3 = null;
+    public static String qr_result4 = null;
     public static int[] Pic=null;
     private Message message;
     // 程序自动执行
@@ -704,7 +710,7 @@ public class ConnectTransport {
                     objects = yolov5ncnn.Detect(QRpic, false);
                     for(int i=0;i<objects.length;i++)
                     {
-                        Log.d("qr", "长度"+objects[i].label);
+                        Log.d("qr", "识别结果："+objects[i].label);
                         if("QRCode".equals(objects[i].label))
                         {
                             retx=(int)objects[i].x;
@@ -731,6 +737,8 @@ public class ConnectTransport {
                             case 4:
                                 QRpic4 = CarShape.opencvCutmap(QRpic,retx,rety,w,h);//对前一张图片进行裁切
                                 qr_result4=RightAutoFragment.QRReconBitmap(QRpic4);
+                                break;
+                            default:
                                 break;
                         }
                     }
@@ -782,7 +790,7 @@ public class ConnectTransport {
                     break;
 
                 case 3://利用yolov直接识别图片信息，包含形状个数及车牌位置，准确率高
-                    if(shapeReadNum<7)//有几张图片就进入几次
+                    if(shapeReadNum<1)//有几张图片就进入几次
                     {
                         Log.d("yolov5", "进入形状识别 ");
                         Bitmap SelectedImage=null;
@@ -802,7 +810,10 @@ public class ConnectTransport {
                         {
                             Log.d("yolov", "标签："+objects[i].label);
                             switch (objects[i].label){
-                                case "plate"://裁切出车牌区域
+                                /*车牌识别结果处理
+                                 *适合未知车牌图形库，经过训练可较为准确提取处车牌位置
+                                 * */
+                                case "plate"://裁切出车牌区域,采用OCR进行识别，功能暂未实现
                                     Log.d("yolov", "x"+objects[i].x);
                                     retx=(int)objects[i].x;
                                     rety=(int)objects[i].y;
@@ -818,71 +829,141 @@ public class ConnectTransport {
                                     //Log.d("yolov", "plate: "+plate);
                                     break;
 
-                                case "black_tri":     black_tri++;      break;
-                                case "black_rect":    black_rect++;     break;
-                                case "black_rhomb":   black_rhomb++;    break;
-                                case "black_star":    black_star++;     break;
-                                case "black_cir":     black_cir++;      break;
-                                case "white_tri":     white_tri++;      break;
-                                case "white_rect":    white_rect++;     break;
-                                case "white_rhomb":   white_rhomb++;    break;
-                                case "white_star":    white_star++;     break;
-                                case "white_cir":     white_cir++;      break;
-                                case "red_tri":     red_tri++;      break;
-                                case "red_rect":    red_rect++;     break;
-                                case "red_rhomb":   red_rhomb++;    break;
-                                case "red_star":    red_star++;     break;
-                                case "red_cir":     red_cir++;      break;
-                                case "green_tri":     green_tri++;      break;
-                                case "green_rect":    green_rect++;     break;
-                                case "green_rhomb":   green_rhomb++;    break;
-                                case "green_star":    green_star++;     break;
-                                case "green_cir":     green_cir++;      break;
-                                case "blue_tri":     blue_tri++;      break;
-                                case "blue_rect":    blue_rect++;     break;
-                                case "blue_rhomb":   blue_rhomb++;    break;
-                                case "blue_star":    blue_star++;     break;
-                                case "blue_cir":     blue_cir++;      break;
-                                case "yellow_tri":     yellow_tri++;      break;
-                                case "yellow_rect":    yellow_rect++;     break;
-                                case "yellow_rhomb":   yellow_rhomb++;    break;
-                                case "yellow_star":    yellow_star++;     break;
-                                case "yellow_cir":     yellow_cir++;      break;
-                                case "purple_tri":     purple_tri++;      break;
-                                case "purple_rect":    purple_rect++;     break;
-                                case "purple_rhomb":   purple_rhomb++;    break;
-                                case "purple_star":    purple_star++;     break;
-                                case "purple_cir":     purple_cir++;      break;
+                                    /*形状识别结果处理 */
 
-                                case "turnRight":
-                                    //交通标志物代码可以放在此处
-                                    break;
-                                default:
-                                    break;
+                                    case "black_tri":     black_tri++;      break;
+                                    case "black_rect":    black_rect++;     break;
+                                    case "black_square":  black_square++;   break;
+                                    case "black_rhomb":   black_rhomb++;    break;
+                                    case "black_star":    black_star++;     break;
+                                    case "black_cir":     black_cir++;      break;
+                                    case "white_tri":     white_tri++;      break;
+                                    case "white_rect":    white_rect++;     break;
+                                    case "white_square":  white_square++;   break;
+                                    case "white_rhomb":   white_rhomb++;    break;
+                                    case "white_star":    white_star++;     break;
+                                    case "white_cir":     white_cir++;      break;
+                                    case "red_tri":     red_tri++;      break;
+                                    case "red_rect":    red_rect++;     break;
+                                    case "red_square":  red_square++;   break;
+                                    case "red_rhomb":   red_rhomb++;    break;
+                                    case "red_star":    red_star++;     break;
+                                    case "red_cir":     red_cir++;      break;
+                                    case "green_tri":     green_tri++;      break;
+                                    case "green_rect":    green_rect++;     break;
+                                    case "green_square":  green_square++;   break;
+                                    case "green_rhomb":   green_rhomb++;    break;
+                                    case "green_star":    green_star++;     break;
+                                    case "green_cir":     green_cir++;      break;
+                                    case "blue_tri":     blue_tri++;      break;
+                                    case "blue_rect":    blue_rect++;     break;
+                                    case "blue_square":  blue_square++;   break;
+                                    case "blue_rhomb":   blue_rhomb++;    break;
+                                    case "blue_star":    blue_star++;     break;
+                                    case "blue_cir":     blue_cir++;      break;
+                                    case "yellow_tri":     yellow_tri++;      break;
+                                    case "yellow_rect":    yellow_rect++;     break;
+                                    case "yellow_square":  yellow_square++;   break;
+                                    case "yellow_rhomb":   yellow_rhomb++;    break;
+                                    case "yellow_star":    yellow_star++;     break;
+                                    case "yellow_cir":     yellow_cir++;      break;
+                                    case "purple_tri":     purple_tri++;      break;
+                                    case "purple_rect":    purple_rect++;     break;
+                                    case "purple_square":  purple_square++;   break;
+                                    case "purple_rhomb":   purple_rhomb++;    break;
+                                    case "purple_star":    purple_star++;     break;
+                                    case "purple_cir":     purple_cir++;      break;
+                                    case "cyan_tri":     cyan_tri++;      break;
+                                    case "cyan_rect":    cyan_rect++;     break;
+                                    case "cyan_square":  cyan_square++;   break;
+                                    case "cyan_rhomb":   cyan_rhomb++;    break;
+                                    case "cyan_star":    cyan_star++;     break;
+                                    case "cyan_cir":     cyan_cir++;      break;
+
+                                    case "turnRight":
+                                        //交通标志物代码可以放在此处
+                                        break;
+
+                                /*车牌识别结果处理
+                                 *适合已知车牌图形库，经过训练结果较为准确场景
+                                * */
+                                    case "B880U0"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="B880U0"; }
+                                        else{ PlateNum2="B880U0"; }
+                                        break;
+                                    case "G660D9"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="G660D9"; }
+                                        else{ PlateNum2="G660D9"; }
+                                        break;
+                                    case "G696G6"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="G696G6"; }
+                                        else{ PlateNum2="G696G6"; }
+                                        break;
+                                    case "I100U5"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="I100U5"; }
+                                        else{ PlateNum2="I100U5"; }
+                                        break;
+                                    case "L101I3"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="L101I3"; }
+                                        else{ PlateNum2="L101I3"; }
+                                        break;
+                                    case "P996Y6"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="P996Y6"; }
+                                        else{ PlateNum2="P996Y6"; }
+                                        break;
+                                    case "Q564E3"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="Q564E3"; }
+                                        else{ PlateNum2="Q564E3"; }
+                                        break;
+                                    case "Q687F3"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="Q687F3"; }
+                                        else{ PlateNum2="Q687F3"; }
+                                        break;
+                                    case "T159B8"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="T159B8"; }
+                                        else{ PlateNum2="T159B8"; }
+                                        break;
+                                    case "U010I1"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="U010I1"; }
+                                        else{ PlateNum2="U010I1"; }
+                                        break;
+                                    case "Y568Y0"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="Y568Y0"; }
+                                        else{ PlateNum2="Y568Y0"; }
+                                        break;
+                                    case "Z987X1"://识别车牌号1
+                                        if (PlateNum1==null) { PlateNum1="Z987X1"; }
+                                        else{ PlateNum2="Z987X1"; }
+                                        break;
+                                    default:
+                                        break;
 
                             }
                         }
-                        tri=black_tri+white_tri+red_tri+green_tri+blue_tri+yellow_tri+purple_tri;
-                        rect=black_rect+white_rect+red_rect+green_rect+blue_rect+yellow_rect+purple_rect;
-                        rhomb=black_rhomb+white_rhomb+red_rhomb+green_rhomb+blue_rhomb+yellow_rhomb+purple_rhomb;
-                        star=black_star+white_star+red_star+green_star+blue_star+yellow_star+purple_star;
-                        circle=black_cir+white_cir+red_cir+green_cir+blue_cir+yellow_cir+purple_cir;
+                        tri=black_tri+white_tri+red_tri+green_tri+blue_tri+yellow_tri+purple_tri+ cyan_tri;
+                        rect=black_rect+white_rect+red_rect+green_rect+blue_rect+yellow_rect+purple_rect+cyan_rect;
+                        square=black_square+white_square+red_square+green_square+blue_square+yellow_square+purple_square+cyan_square;
+                        rhomb=black_rhomb+white_rhomb+red_rhomb+green_rhomb+blue_rhomb+yellow_rhomb+purple_rhomb+cyan_rhomb;
+                        star=black_star+white_star+red_star+green_star+blue_star+yellow_star+purple_star+cyan_star;
+                        circle=black_cir+white_cir+red_cir+green_cir+blue_cir+yellow_cir+purple_cir+cyan_cir;
                         picShapeNum= tri+rect+rhomb+star+circle;
                         if(picShapeNum<6){
                             shapeZero();
                         }
                         else{
                             //形状识别结果处理函数
-                            blacknum =black_tri+black_rect+black_rhomb+black_star+black_cir;
-                            whitenum=white_tri+ white_rect+white_rhomb+white_star+white_cir;
-                            rednum=red_tri+ red_rect+red_rhomb+red_star+red_cir;
-                            greennum=green_tri+ green_rect+green_rhomb+green_star+green_cir;
-                            bluenum=blue_tri+ blue_rect+blue_rhomb+blue_star+blue_cir;
-                            yellownum=yellow_tri+yellow_rect+yellow_rhomb+yellow_star+yellow_cir;
-                            purplenum=purple_tri+ purple_rect+purple_rhomb+purple_star+purple_cir;
+                            blacknum =black_tri+black_rect+black_rhomb+black_star+black_cir+black_square;
+                            whitenum=white_tri+ white_rect+white_rhomb+white_star+white_cir+white_square;
+                            rednum=red_tri+ red_rect+red_rhomb+red_star+red_cir+red_square;
+                            greennum=green_tri+ green_rect+green_rhomb+green_star+green_cir+green_square;
+                            bluenum=blue_tri+ blue_rect+blue_rhomb+blue_star+blue_cir+blue_square;
+                            yellownum=yellow_tri+yellow_rect+yellow_rhomb+yellow_star+yellow_cir+yellow_square;
+                            purplenum=purple_tri+ purple_rect+purple_rhomb+purple_star+purple_cir+purple_square;
+                            cyannum=cyan_tri+ cyan_rect+cyan_rhomb+cyan_star+cyan_cir+cyan_square;
                             carShape.triResultnum=tri;
                             carShape.rectResultnum=rect;
                             carShape.rhombResultnum=rhomb;
+                            carShape.squareResultnum=square;
                             carShape.starResultnum=star;
                             carShape.circleResultnum=circle;
                             carShape.shapeResultNum=picShapeNum;
@@ -896,6 +977,8 @@ public class ConnectTransport {
                         imgReadNum = 0;
                         shapedata="F"+rednum+","+"F"+greennum+","+"F"+bluenum;
                         Log.d("yolov5", "shape识别结果为: "+shapedata);
+                        Log.d("yolov5", "车牌1识别结果为: "+PlateNum1);
+                        Log.d("yolov5", "车牌2识别结果为: "+PlateNum2);
                         shapedataarr=shapedata.split(",");
                         int[] num=new int[shapedataarr.length];
                         try {
@@ -921,70 +1004,9 @@ public class ConnectTransport {
                     break;
 
 
-                case 4:
-                    Log.d("auto","进入车牌识别");
-                    if (shapeReadNum<3) {
-                        switch (shapeReadNum)//获取tft中图片的范围，以便裁切，得到retx，rety，disx，disy四个值
-                        {
-                            case 0:
-                                image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//第一次获取图片
-                                break;
-                            case 1:
-                                image2 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的需要对比的图片
-                                CarShape.autoCut(image1, image2);//对比得出不同区域，得到四个重要的参数
-                                break;
-                            case 2:
-                                image1 = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
-                                CarShape.autoCut(image1, image2);//再次对比，提高准确性
-                                break;
-                        }
-                        shapeReadNum++;
-                        tftDown();//先让小车发送下翻图片
-                        task_handler.sendEmptyMessageDelayed(4, 2000);//重新进入case3
-                    }
-                    else {//根据四个重要参数，对图片逐一识别
-                        if(imgReadNum<1){
-                            imgReadNum++;
-                            carShape=new CarShape();
-                            carPlate=new carPlate();
-                            // long current = System.currentTimeMillis();
-                            Bitmap bitmapShape = left_Fragment.bitmap.copy(ARGB_8888, true);//获取更新后的图片
-                            Bitmap bitmap_opencv_cut = CarShape.opencvCutmap( bitmapShape,CarShape.ret_x,CarShape.ret_y,CarShape.dis_x,CarShape.dis_y);;//对前一张图片进行裁切
-                            RightAutoFragment.image_show.setImageBitmap(bitmap_opencv_cut);//显示裁切后的图片
-                            carPlate.plateDetector(bitmap_opencv_cut);
-                            Yolov5Fragment.iv2.setImageBitmap(CarShape.rebitmap_opencv);//显示轮廓图像
-                            if ( carShape.shapeResultNum>9)
-                            {
-                                picShapeNum=imgReadNum;
-                                rednum=carShape.red_num;
-                                greennum=carShape.green_num;
-                                bluenum=carShape.blue_num;
-                            }
-                            tftDown();//先让小车发送下翻图片
-                            task_handler.sendEmptyMessageDelayed(4, 2000);//重新进入case3
-                        }else{
-//                            imgReadNum = 0;
-//                            shapedata="F"+rednum+","+"F"+greennum+","+"F"+bluenum;
-//                            shapedataarr=shapedata.split(",");
-//                            int[] num=new int[shapedataarr.length];
-//                            try {
-//                                for (int i=0;i<shapedataarr.length;i++)
-//                                {
-//                                    num[i] = algorithm.OxStringtoInt(shapedataarr[i]);//将16进制字符串转为10进制的int
-//                                }
-//                                shapedata_sho=new short[num.length];
-//                                shapedata_sho=algorithm.shortint2hex(num);
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            }
-//                            TYPE=0xAA;
-//                            MAJOR = 0x40;
-//                            FIRST =  shapedata_sho[0];//二维码读取到的数据，字符串转为了BYTE，此处将第一位发给小车
-//                            SECOND =  shapedata_sho[1];
-//                            THRID =  shapedata_sho[2];
-//                            send();
-                        }
-                    }
+                case 4://任务三已拿到车牌结果
+                    Log.d("auto","进入车牌处理任务");
+
 
                     break;
 

@@ -530,11 +530,13 @@ JNIEXPORT jobjectArray JNICALL Java_com_tencent_yolov5ncnn_YoloV5Ncnn_Detect(JNI
     };*/
     static const char* class_names[] = {
             "tft","trafficSign","green","yellow","red","tft","plate","QRCode","go","stop","back","turnRight",
-            "turnLeft","turnRound","black_tri","black_rect","black_rhomb","black_star","black_cir","white_tri",
-            "white_rect","white_rhomb","white_star","white_cir","red_tri","red_rect","red_rhomb","red_star",
-            "red_cir","green_tri","green_rect","green_rhomb","green_star","green_cir","blue_tri","blue_rect",
-            "blue_rhomb","blue_star","blue_cir","yellow_tri","yellow_rect","yellow_rhomb","yellow_star",
-            "yellow_cir","purple_tri","purple_rect","purple_rhomb","purple_star","purple_cir"
+            "turnLeft","turnRound","black_tri","black_rect","black_square","black_rhomb","black_star","black_cir","white_tri",
+            "white_rect","white_square","white_rhomb","white_star","white_cir","red_tri","red_rect","red_square","red_rhomb","red_star",
+            "red_cir","green_tri","green_rect","gree_square","green_rhomb","green_star","green_cir","blue_tri","blue_rect","blue_square",
+            "blue_rhomb","blue_star","blue_cir","yellow_tri","yellow_rect","yellow_square","yellow_rhomb","yellow_star",
+            "yellow_cir","purple_tri","purple_rect","purple_square","purple_rhomb","purple_star","purple_cir" ,
+            "cyan_tri","cyan_rect","cyan_square","cyan_rhomb","cyan_star","cyan_cir",
+            "B880U0","G660D9","G696G6","I100U5","L101I3","P996Y6","Q564E3","Q687F3","T159B8","U010I1","Y568Y0","Z987X1"
     };
 
     jobjectArray jObjArray = env->NewObjectArray(objects.size(), objCls, NULL);
