@@ -17,8 +17,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
 import android.util.Log;
-
-import com.bkrc.car2019.tesseract.MainActivity;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.ChecksumException;
 import com.google.zxing.DecodeHintType;
@@ -27,6 +25,7 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
+import com.hoho.android.usbserial.driver.UsbSerialPort;
 import com.tencent.yolov5ncnn.YoloV5Ncnn;
 
 import org.greenrobot.eventbus.EventBus;
@@ -119,7 +118,6 @@ public class ConnectTransport {
     public static CarShape carShape;
     public static carPlate carPlate;
     public static CarRgbLight CarRgbLight;
-    public static MainActivity tesseract;
 
     private static OutputStream SerialOutputStream;
     private InputStream SerialInputStream;
@@ -743,21 +741,7 @@ public class ConnectTransport {
                         }
                     }
                     qrnum=0;
-//                    Log.d("yolov", "x:"+retx+"y:"+rety+"w:"+w+"h:"+h+"长度"+objects.length);
-//                    RightAutoFragment.image_show.setImageBitmap(bitmap_cut);//显示裁切后的图片
-
-//                    if (QRReadNum<5){
-//                        RightAutoFragment.QrFlag=true;
-//
-//                        qr_result= RightAutoFragment.result_qr;
-//                        QRReadNum++;
-//                        if (qr_result!=null){
-//                            QRReadNum=6;
-//                        }
-//                        task_handler.sendEmptyMessageDelayed(2, 500);//重新进入case2
-//                    }
-//                    else{
-//                        RightAutoFragment.QrFlag=false;
+                    try {
                         if (qr_result1!=null) {//二维码识别的结果为字符串
                             Log.d("qr", "二维码识别结果"+qr_result1);
                             qr_resultArr=algorithm.S2Arr(qr_result1);//需要对字符串进行处理，得到字符串数组
@@ -782,6 +766,11 @@ public class ConnectTransport {
                             send();
                             Log.d("qr", "后三位已发送");
                         }
+
+                    } catch (Exception e){
+                        toastUtil.ShowToast("QR数据处理格式有误");
+                        Log.e("qr", "QR数据处理格式有误" );
+                 }
 //                    }
 
                     //Sw_algorithm(2,result_qr);					// 二维码算法选择
@@ -790,7 +779,7 @@ public class ConnectTransport {
                     break;
 
                 case 3://利用yolov直接识别图片信息，包含形状个数及车牌位置，准确率高
-                    if(shapeReadNum<1)//有几张图片就进入几次
+                    if(shapeReadNum<7)//有几张图片就进入几次
                     {
                         Log.d("yolov5", "进入形状识别 ");
                         Bitmap SelectedImage=null;
